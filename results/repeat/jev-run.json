@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "successes": 400,
+  "expected": 400,
+  "calls_this_invocation": 400,
+  "wall_seconds_this_invocation": 184.47304924799982,
+  "budget_usd": 1.0,
+  "pause_seconds_between_calls": 0.05,
+  "timeout_seconds": 30.0,
+  "accounted_usd": 0.012962207999999987,
+  "known_list_price_usd": 0.012962207999999987,
+  "uncertain_reserved_usd": 0.0,
+  "attempts": 400,
+  "note": "Budget accounting uses current list price and a conservative context-limit reservation. It is per run, not an account-wide credit cap or provider invoice."
+}

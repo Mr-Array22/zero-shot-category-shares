@@ -1,0 +1,78 @@
+{
+  "created_utc": "2026-10-22T15:16:41.955301+00:00",
+  "python": "3.12.3",
+  "source_url": "https://www.kaggle.com/datasets/selener/consumer-complaint-database",
+  "download_url": "https://www.kaggle.com/api/v1/datasets/download/selener/consumer-complaint-database?datasetVersionNumber=1",
+  "dataset_version": 1,
+  "archive_sha256": "a2ee5d14aae1dba483e70ae94a96af7f401a09fb1011028f44bc59a32138f453",
+  "archive_bytes": 184119866,
+  "csv_uncompressed_bytes": 737001477,
+  "csv_crc32": "d90f7b62",
+  "study_sha256": "1f583436059e2bb087253802867eda16fe88b4145b6c1d810d1b7cb838af6dff",
+  "requests_sha256": "ac82a2ec393aae9a87d4ce693a9aa04cacc3cd5d64139e3b24d5c67b87bd3fd1",
+  "seed": 20261022,
+  "max_chars": 4000,
+  "labels": [
+    "bank_account",
+    "credit_card",
+    "credit_reporting",
+    "debt_collection",
+    "mortgage"
+  ],
+  "filter_counts": {
+    "raw_rows": 1282355,
+    "excluded_product": 443556,
+    "excluded_date": 519077,
+    "eligible_before_dedup": 114278,
+    "missing_or_short_narrative": 205444,
+    "duplicate_model_input": 2405,
+    "conflicting_input_groups_removed": 32
+  },
+  "available_after_dedup": {
+    "train": 77242,
+    "dev": 17636,
+    "test": 16963
+  },
+  "near_duplicate_detection": false,
+  "splits": {
+    "train": {
+      "n": 12000,
+      "counts": {
+        "debt_collection": 3584,
+        "credit_reporting": 2461,
+        "mortgage": 3152,
+        "credit_card": 1635,
+        "bank_account": 1168
+      },
+      "start": "2015-03-19",
+      "end": "2016-06-30",
+      "truncated": 5
+    },
+    "dev": {
+      "n": 1000,
+      "counts": {
+        "mortgage": 233,
+        "bank_account": 130,
+        "debt_collection": 258,
+        "credit_reporting": 223,
+        "credit_card": 156
+      },
+      "start": "2016-07-01",
+      "end": "2016-09-30",
+      "truncated": 0
+    },
+    "test": {
+      "n": 2000,
+      "counts": {
+        "credit_reporting": 428,
+        "bank_account": 253,
+        "credit_card": 293,
+        "mortgage": 459,
+        "debt_collection": 567
+      },
+      "start": "2016-10-01",
+      "end": "2016-12-31",
+      "truncated": 0
+    }
+  }
+}

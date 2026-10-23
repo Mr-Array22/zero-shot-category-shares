@@ -1,0 +1,9 @@
+{
+  "model": "jev-1.14.0",
+  "request_file_sha256": "ac82a2ec393aae9a87d4ce693a9aa04cacc3cd5d64139e3b24d5c67b87bd3fd1",
+  "input_usd_per_million": 0.042,
+  "reserve_tokens_per_call": 65536,
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "concurrency": 1,
+  "automatic_retries": 0
+}

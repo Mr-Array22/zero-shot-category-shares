@@ -1,0 +1,14 @@
+{
+  "arm": "repeat",
+  "created_utc": "2026-10-23T13:03:31.667098+00:00",
+  "preregistered": false,
+  "model": "jev-1.14.0",
+  "source_study_sha256": "1f583436059e2bb087253802867eda16fe88b4145b6c1d810d1b7cb838af6dff",
+  "study_sha256": "5879213b820677ba83c31cf0ea59ba20d72f7af5d447b138e24b365b56404c0d",
+  "requests_sha256": "87ddb34f931a00cf4cd382184728d02fb966dd58fe3cfb4b41460b8ce8b7ded3",
+  "n": 400,
+  "originals": 200,
+  "copies": 2,
+  "original_ids_sha256": "ff2c5a129f69df4664447fd47bb7798370997e1c3d886e6c5da3ae1c92da899c",
+  "note": "Requests are byte-identical to the v1 originals. Measures run-to-run stability only."
+}

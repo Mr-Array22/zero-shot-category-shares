@@ -1,0 +1,48 @@
+{
+  "study_sha256": "1f583436059e2bb087253802867eda16fe88b4145b6c1d810d1b7cb838af6dff",
+  "predictions_sha256": "710a14a863756be8bdb3324e4594a7be2b03e8dca6a3e46ab243ac4c4b4535d3",
+  "python": "3.12.15",
+  "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "sklearn": "1.7.2",
+  "numpy": "2.2.6",
+  "threadpool_limit": 1,
+  "fit_seconds": 3.805575611999984,
+  "vocabulary_features": 40000,
+  "iterations": [
+    65
+  ],
+  "parameters": {
+    "C": 1.0,
+    "max_iter": 1500,
+    "solver": "lbfgs",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 3,
+    "max_features": 40000,
+    "sublinear_tf": true
+  },
+  "timing_design": "Single records; model remains in memory; no batching; fit excluded. Local CPU timing is not hosted-model compute latency.",
+  "timings": {
+    "keyword": {
+      "evaluation_wall_seconds": 0.10708799500002897,
+      "requests": 3000
+    },
+    "tfidf": {
+      "evaluation_wall_seconds": 2.181776400999979,
+      "requests": 3000
+    }
+  },
+  "model_calls": 0,
+  "source_sha256": {
+    "baselines.py": "ec0db80f75ea97e664915fc2a07d8ba77726d03b96a66237dd5787bc0f03c355",
+    "figures.py": "0a569d0096a2227fd1f1710cf19dbdb4b99fb1d30316cf701d3dca812b5005ed",
+    "jev_runner.py": "f623ccd7478c6932d05ae44178924c58bf10ce96c1f7e1e199efe0a7dfef06a3",
+    "metrics.py": "8027bde2d5ae02b6893f2bdd4e2f3d7c5e4e9c425ff790a70edd31b5889abcbb",
+    "prepare.py": "bb3c466d64207f65cba8119eb9667edb3f1c59886b2d564da0ad35fdf257fa60",
+    "report.py": "4a7de18c3bc6fedd2be4aa8e284cbb4c7166da4327efbeda1161dc49018a0132",
+    "run.py": "dd3a7867546e6f51fb5d7a37511610ef847eb0050e5a64cc1ecdde86f48542c8",
+    "study.py": "010b13af16515a5b9198ce9e739d003f0f71da1421beb8317295a890a83b3434"
+  }
+}

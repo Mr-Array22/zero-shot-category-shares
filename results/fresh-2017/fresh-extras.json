@@ -1,0 +1,42 @@
+{
+  "note": "Exploratory, not pre-registered. Pre-registered comparison is Jev v2 vs v1 (fresh-metrics.json).",
+  "inputs_sha256": {
+    "fresh_study": "1086bfb44e82d180bf81e2cce2c49ad1990b8c6886cbf8fe18c35655a49122cd"
+  },
+  "jev_v2_vs_tfidf": {
+    "accuracy": {
+      "jev_v2": 0.8785,
+      "tfidf": 0.864
+    },
+    "mcnemar": {
+      "jev_v2_only_right": 109,
+      "tfidf_only_right": 80,
+      "exact_p": 0.04139561928397322
+    },
+    "max_abs_share_error_pp": {
+      "jev_v2": 0.7,
+      "tfidf": 2.05,
+      "paired_diff_ci95": [
+        -2.45,
+        -0.22375000000000111
+      ]
+    }
+  },
+  "acc_correction_on_fresh": {
+    "jev_v1_cc_max_pp": 6.3,
+    "jev_v1_acc_max_pp": 0.7936776117475425,
+    "jev_v1_acc_signed_pp": {
+      "bank_account": -0.7936776117475425,
+      "credit_card": 0.5438134153053581,
+      "credit_reporting": 0.07521432934444461,
+      "debt_collection": 0.30740132023834854,
+      "mortgage": -0.132751453140606
+    },
+    "jev_v2_cc_max_pp": 0.7,
+    "jev_v2_acc_max_pp": 1.2303676569139874,
+    "confusion_source": {
+      "jev_v1": "original dev split (v1 definitions)",
+      "jev_v2": "results/dev-v2 (dev informed v2 design)"
+    }
+  }
+}

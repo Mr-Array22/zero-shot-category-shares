@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jevstudy"
+version = "1.0.0"
+description = "Accuracy vs. category-share bias of a zero-shot classifier on real CFPB complaints: experiment code and results."
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = { file = "LICENSE" }
+authors = [{ name = "Mostafa Gamal" }]
+dependencies = [
+    "numpy==2.2.6",
+    "scipy==1.15.3",
+    "scikit-learn==1.7.2",
+    "matplotlib==3.10.7",
+]
+
+[project.optional-dependencies]
+embed = ["sentence-transformers==6.1.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

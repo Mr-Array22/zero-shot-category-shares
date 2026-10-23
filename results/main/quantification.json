@@ -1,0 +1,764 @@
+{
+  "status": "complete",
+  "labels": [
+    "bank_account",
+    "credit_card",
+    "credit_reporting",
+    "debt_collection",
+    "mortgage"
+  ],
+  "label_names": [
+    "Bank account",
+    "Credit card",
+    "Credit reporting",
+    "Debt collection",
+    "Mortgage"
+  ],
+  "dev_n": 1000,
+  "test_n": 2000,
+  "estimation_data": "development labels and development probabilities only; test labels score but never fit a correction",
+  "method_definitions": {
+    "CC": "Classify and count: share of test predictions per category (hard labels).",
+    "ACC_clip": "Adjusted classify and count (Forman): solve M p = q with M estimated on dev; clip negative components to zero and renormalise.",
+    "ACC_simplex": "ACC with the solution constrained to the probability simplex: weighted NNLS with a sum-to-one row, then renormalise.",
+    "PCC": "Probabilistic classify and count: mean predicted probability vector on test.",
+    "PACC_clip": "Probabilistic ACC (Bella et al.): M from mean dev probability vectors per true class; clip and renormalise.",
+    "PACC_simplex": "PACC with simplex-constrained least squares (weighted NNLS, then renormalise).",
+    "EM": "Saerens, Latinne and Decaestecker (2002) EM prior adjustment; training priors = dev class proportions; assumes calibrated probabilities."
+  },
+  "models": {
+    "keyword": {
+      "available_methods": [
+        "CC",
+        "ACC_clip",
+        "ACC_simplex"
+      ],
+      "condition_number_hard": 4.1221205820651,
+      "condition_number_soft": null,
+      "dev_cc_signed_share_error_pp": [
+        20.1,
+        -7.3,
+        -1.0000000000000009,
+        -9.6,
+        -2.200000000000002
+      ],
+      "dev_cc_max_abs_share_error_pp": 20.1,
+      "methods": {
+        "CC": {
+          "estimate_share": [
+            0.319,
+            0.0795,
+            0.232,
+            0.171,
+            0.1985
+          ],
+          "signed_share_error_pp": [
+            19.25,
+            -6.699999999999999,
+            1.8000000000000016,
+            -11.249999999999996,
+            -3.1
+          ],
+          "max_abs_share_error_pp": 19.25,
+          "total_variation": 0.21050000000000002,
+          "max_abs_share_error_pp_ci95": [
+            17.373749999999998,
+            21.27625
+          ],
+          "bootstrap_valid_replicates": 500
+        },
+        "ACC_clip": {
+          "estimate_share": [
+            0.10886214557356509,
+            0.15106931698581613,
+            0.25058712943603045,
+            0.27514099623736493,
+            0.21434041176722352
+          ],
+          "signed_share_error_pp": [
+            -1.763785442643491,
+            0.4569316985816141,
+            3.658712943603046,
+            -0.8359003762635042,
+            -1.5159588232776495
+          ],
+          "max_abs_share_error_pp": 3.658712943603046,
+          "total_variation": 0.04115644642184652,
+          "max_abs_share_error_pp_ci95": [
+            2.1885514080384896,
+            9.913552483908388
+          ],
+          "bootstrap_valid_replicates": 500,
+          "diagnostics": {
+            "clip_needed": false,
+            "min_raw": 0.10886214557356509,
+            "raw_solution": [
+              0.10886214557356509,
+              0.15106931698581613,
+              0.25058712943603045,
+              0.27514099623736493,
+              0.21434041176722352
+            ],
+            "residual_norm": 4.163336342344337e-17
+          },
+          "bootstrap_clip_needed_fraction": 0.004
+        },
+        "ACC_simplex": {
+          "estimate_share": [
+            0.10886214562935242,
+            0.1510693169508859,
+            0.2505871294355719,
+            0.2751409962252554,
+            0.21434041175893448
+          ],
+          "signed_share_error_pp": [
+            -1.7637854370647577,
+            0.45693169508859155,
+            3.658712943557188,
+            -0.8359003774744578,
+            -1.5159588241065531
+          ],
+          "max_abs_share_error_pp": 3.658712943557188,
+          "total_variation": 0.04115644638645774,
+          "max_abs_share_error_pp_ci95": [
+            2.18855140246344,
+            9.913552482562112
+          ],
+          "bootstrap_valid_replicates": 500,
+          "diagnostics": {
+            "sum_before_renormalise": 1.0,
+            "residual_norm": 3.2817171336246293e-11
+          }
+        }
+      }
+    },
+    "tfidf": {
+      "available_methods": [
+        "CC",
+        "ACC_clip",
+        "ACC_simplex",
+        "PCC",
+        "PACC_clip",
+        "PACC_simplex",
+        "EM"
+      ],
+      "condition_number_hard": 1.3774184029804455,
+      "condition_number_soft": 2.2537949433528564,
+      "dev_cc_signed_share_error_pp": [
+        -0.30000000000000027,
+        -1.9999999999999991,
+        0.7000000000000006,
+        0.10000000000000009,
+        1.4999999999999987
+      ],
+      "dev_cc_max_abs_share_error_pp": 1.9999999999999991,
+      "methods": {
+        "CC": {
+          "estimate_share": [
+            0.1025,
+            0.141,
+            0.231,
+            0.2865,
+            0.239
+          ],
+          "signed_share_error_pp": [
+            -2.400000000000001,
+            -0.5500000000000005,
+            1.7000000000000015,
+            0.30000000000000027,
+            0.9499999999999981
+          ],
+          "max_abs_share_error_pp": 2.400000000000001,
+          "total_variation": 0.029500000000000005,
+          "max_abs_share_error_pp_ci95": [
+            1.6500000000000001,
+            3.250000000000001
+          ],
+          "bootstrap_valid_replicates": 500
+        },
+        "ACC_clip": {
+          "estimate_share": [
+            0.10196164057585956,
+            0.16363075211567538,
+            0.22203021472928502,
+            0.2895968108234094,
+            0.22278058175577073
+          ],
+          "signed_share_error_pp": [
+            -2.453835942414044,
+            1.7130752115675385,
+            0.8030214729285029,
+            0.6096810823409404,
+            -0.671941824422928
+          ],
+          "max_abs_share_error_pp": 2.453835942414044,
+          "total_variation": 0.03125777766836977,
+          "max_abs_share_error_pp_ci95": [
+            1.4339789612360663,
+            4.2645937005849595
+          ],
+          "bootstrap_valid_replicates": 500,
+          "diagnostics": {
+            "clip_needed": false,
+            "min_raw": 0.10196164057585953,
+            "raw_solution": [
+              0.10196164057585953,
+              0.16363075211567535,
+              0.22203021472928497,
+              0.2895968108234093,
+              0.22278058175577067
+            ],
+            "residual_norm": 1.1188630228279524e-16
+          },
+          "bootstrap_clip_needed_fraction": 0.0
+        },
+        "ACC_simplex": {
+          "estimate_share": [
+            0.10196164061877455,
+            0.16363075210146227,
+            0.2220302147200007,
+            0.28959681081408783,
+            0.22278058174567464
+          ],
+          "signed_share_error_pp": [
+            -2.4538359381225447,
+            1.7130752101462283,
+            0.8030214720000706,
+            0.6096810814087861,
+            -0.6719418254325371
+          ],
+          "max_abs_share_error_pp": 2.4538359381225447,
+          "total_variation": 0.031257777635550835,
+          "max_abs_share_error_pp_ci95": [
+            1.4339789652219017,
+            4.2645936974114385
+          ],
+          "bootstrap_valid_replicates": 500,
+          "diagnostics": {
+            "sum_before_renormalise": 1.0,
+            "residual_norm": 4.1807681184316954e-11
+          }
+        },
+        "PCC": {
+          "estimate_share": [
+            0.1074704302996414,
+            0.1471732979738887,
+            0.22282098852154647,
+            0.28223577892448176,
+            0.2402995042804411
+          ],
+          "signed_share_error_pp": [
+            -1.9029569700358602,
+            0.0673297973888709,
+            0.8820988521546475,
+            -0.12642210755182126,
+            1.0799504280441101
+          ],
+          "max_abs_share_error_pp": 1.9029569700358602,
+          "total_variation": 0.02029379077587655,
+          "max_abs_share_error_pp_ci95": [
+            1.1482223756972423,
+            2.8977572340713875
+          ],
+          "bootstrap_valid_replicates": 500
+        },
+        "PACC_clip": {
+          "estimate_share": [
+            0.1090540654001625,
+            0.15189968359669814,
+            0.2315486051534608,
+            0.28376669336754595,
+            0.22373095248213268
+          ],
+          "signed_share_error_pp": [
+            -1.7445934599837496,
+            0.5399683596698152,
+            1.7548605153460795,
+            0.026669336754597817,
+            -0.5769047517867332
+          ],
+          "max_abs_share_error_pp": 1.7548605153460795,
+          "total_variation": 0.023214982117704876,
+          "max_abs_share_error_pp_ci95": [
+            1.0818059200266037,
+            3.699662284170489
+          ],
+          "bootstrap_valid_replicates": 500,
+          "diagnostics": {
+            "clip_needed": false,
+            "min_raw": 0.10905406540016244,
+            "raw_solution": [
+              0.10905406540016244,
+              0.15189968359669803,
+              0.23154860515346062,
+              0.2837666933675458,
+              0.22373095248213254
+            ],
+            "residual_norm": 2.8576114088871287e-16
+          },
+          "bootstrap_clip_needed_fraction": 0.0
+        },
+        "PACC_simplex": {
+          "estimate_share": [
+            0.10905406531846673,
+            0.1518996836332424,
+            0.23154860516620812,
+            0.28376669338226207,
+            0.22373095249982075
+          ],
+          "signed_share_error_pp": [
+            -1.744593468153327,
+            0.5399683633242419,
+            1.7548605166208127,
+            0.026669338226209538,
+            -0.5769047500179258
+          ],
+          "max_abs_share_error_pp": 1.7548605166208127,
+          "total_variation": 0.023214982181712585,
+          "max_abs_share_error_pp_ci95": [
+            1.0818059182622917,
+            3.699662287811912
+          ],
+          "bootstrap_valid_replicates": 500,
+          "diagnostics": {
+            "sum_before_renormalise": 1.0,
+            "residual_norm": 4.8941801644536885e-11
+          }
+        },
+        "EM": {
+          "estimate_share": [
+            0.08074793558186245,
+            0.14475966702557322,
+            0.21803492796477958,
+            0.3073558107108404,
+            0.24910165871694387
+          ],
+          "signed_share_error_pp": [
+            -4.575206441813755,
+            -0.17403329744267726,
+            0.4034927964779583,
+            2.385581071084042,
+            1.960165871694386
+          ],
+          "max_abs_share_error_pp": 4.575206441813755,
+          "total_variation": 0.04749239739256409,
+          "max_abs_share_error_pp_ci95": [
+            2.6684830720594728,
+            7.6439547263714385
+          ],
+          "bootstrap_valid_replicates": 500,
+          "diagnostics": {
+            "iterations": 50,
+            "converged": true,
+            "final_change": 8.56048287811717e-11
+          }
+        }
+      }
+    },
+    "jev": {
+      "available_methods": [
+        "CC",
+        "ACC_clip",
+        "ACC_simplex",
+        "PCC",
+        "PACC_clip",
+        "PACC_simplex",
+        "EM"
+      ],
+      "condition_number_hard": 1.4800674747147118,
+      "condition_number_soft": 1.4678769551362407,
+      "dev_cc_signed_share_error_pp": [
+        0.10000000000000009,
+        -2.5999999999999996,
+        5.999999999999997,
+        -2.5999999999999996,
+        -0.9000000000000008
+      ],
+      "dev_cc_max_abs_share_error_pp": 5.999999999999997,
+      "methods": {
+        "CC": {
+          "estimate_share": [
+            0.116,
+            0.126,
+            0.2915,
+            0.242,
+            0.2245
+          ],
+          "signed_share_error_pp": [
+            -1.0499999999999996,
+            -2.049999999999999,
+            7.749999999999998,
+            -4.149999999999999,
+            -0.5000000000000004
+          ],
+          "max_abs_share_error_pp": 7.749999999999998,
+          "total_variation": 0.07749999999999999,
+          "max_abs_share_error_pp_ci95": [
+            6.5,
+            8.95
+          ],
+          "bootstrap_valid_replicates": 500
+        },
+        "ACC_clip": {
+          "estimate_share": [
+            0.11363882273732903,
+            0.1514327395301082,
+            0.2311392921096686,
+            0.2703121958837454,
+            0.2334769497391488
+          ],
+          "signed_share_error_pp": [
+            -1.286117726267097,
+            0.4932739530108199,
+            1.7139292109668607,
+            -1.3187804116254587,
+            0.39769497391487774
+          ],
+          "max_abs_share_error_pp": 1.7139292109668607,
+          "total_variation": 0.02604898137892557,
+          "max_abs_share_error_pp_ci95": [
+            0.9192621133973264,
+            4.151802159221483
+          ],
+          "bootstrap_valid_replicates": 500,
+          "diagnostics": {
+            "clip_needed": false,
+            "min_raw": 0.11363882273732903,
+            "raw_solution": [
+              0.11363882273732903,
+              0.1514327395301082,
+              0.2311392921096686,
+              0.2703121958837454,
+              0.2334769497391488
+            ],
+            "residual_norm": 6.798699777552591e-17
+          },
+          "bootstrap_clip_needed_fraction": 0.0
+        },
+        "ACC_simplex": {
+          "estimate_share": [
+            0.11363882273515882,
+            0.15143273953089886,
+            0.2311392921099542,
+            0.27031219588429156,
+            0.23347694973969643
+          ],
+          "signed_share_error_pp": [
+            -1.2861177264841177,
+            0.4932739530898872,
+            1.7139292109954214,
+            -1.3187804115708412,
+            0.39769497396964226
+          ],
+          "max_abs_share_error_pp": 1.7139292109954214,
+          "total_variation": 0.02604898138054955,
+          "max_abs_share_error_pp_ci95": [
+            0.9192621118433234,
+            4.151802158184266
+          ],
+          "bootstrap_valid_replicates": 500,
+          "diagnostics": {
+            "sum_before_renormalise": 1.0000000000000002,
+            "residual_norm": 2.170218958616449e-12
+          }
+        },
+        "PCC": {
+          "estimate_share": [
+            0.11632505050505046,
+            0.12900999999999999,
+            0.28791409090909065,
+            0.24436580808080766,
+            0.22238505050505045
+          ],
+          "signed_share_error_pp": [
+            -1.0174949494949543,
+            -1.7490000000000006,
+            7.3914090909090655,
+            -3.913419191919232,
+            -0.7114949494949563
+          ],
+          "max_abs_share_error_pp": 7.3914090909090655,
+          "total_variation": 0.07391409090909104,
+          "max_abs_share_error_pp_ci95": [
+            6.2015261363636425,
+            8.417731818181785
+          ],
+          "bootstrap_valid_replicates": 500
+        },
+        "PACC_clip": {
+          "estimate_share": [
+            0.11457211717560253,
+            0.14769423467298684,
+            0.234519490045215,
+            0.2745267954917254,
+            0.2286873626144703
+          ],
+          "signed_share_error_pp": [
+            -1.1927882824397469,
+            0.11942346729868492,
+            2.0519490045215,
+            -0.8973204508274601,
+            -0.08126373855296964
+          ],
+          "max_abs_share_error_pp": 2.0519490045215,
+          "total_variation": 0.021713724718201807,
+          "max_abs_share_error_pp_ci95": [
+            0.9632652879702239,
+            4.2487525650823805
+          ],
+          "bootstrap_valid_replicates": 500,
+          "diagnostics": {
+            "clip_needed": false,
+            "min_raw": 0.11457211717560244,
+            "raw_solution": [
+              0.11457211717560244,
+              0.1476942346729867,
+              0.23451949004521477,
+              0.27452679549172515,
+              0.22868736261447012
+            ],
+            "residual_norm": 3.8484284159040614e-16
+          },
+          "bootstrap_clip_needed_fraction": 0.0
+        },
+        "PACC_simplex": {
+          "estimate_share": [
+            0.11457211727030034,
+            0.14769423463715026,
+            0.2345194900324991,
+            0.27452679546822734,
+            0.22868736259182287
+          ],
+          "signed_share_error_pp": [
+            -1.1927882729699664,
+            0.11942346371502655,
+            2.0519490032499115,
+            -0.8973204531772638,
+            -0.08126374081771359
+          ],
+          "max_abs_share_error_pp": 2.0519490032499115,
+          "total_variation": 0.02171372466964941,
+          "max_abs_share_error_pp_ci95": [
+            0.9632652878541204,
+            4.248752566814664
+          ],
+          "bootstrap_valid_replicates": 500,
+          "diagnostics": {
+            "sum_before_renormalise": 1.0,
+            "residual_norm": 9.219683747834616e-11
+          }
+        },
+        "EM": {
+          "estimate_share": [
+            0.1159752865791519,
+            0.12543642552231307,
+            0.297382216304799,
+            0.23958690475829952,
+            0.2216191668354365
+          ],
+          "signed_share_error_pp": [
+            -1.0524713420848097,
+            -2.106357447768692,
+            8.3382216304799,
+            -4.391309524170045,
+            -0.7880833164563505
+          ],
+          "max_abs_share_error_pp": 8.3382216304799,
+          "total_variation": 0.08338221630479899,
+          "max_abs_share_error_pp_ci95": [
+            6.981012256169544,
+            9.646869227752887
+          ],
+          "bootstrap_valid_replicates": 500,
+          "diagnostics": {
+            "iterations": 12,
+            "converged": true,
+            "final_change": 3.0219410307452677e-11
+          }
+        }
+      }
+    }
+  },
+  "paired_jev_minus_tfidf": {
+    "CC": {
+      "point_jev_minus_tfidf_pp": 5.349999999999998,
+      "ci95_jev_minus_tfidf_pp": [
+        3.7475,
+        6.500000000000001
+      ]
+    },
+    "ACC_clip": {
+      "point_jev_minus_tfidf_pp": -0.7399067314471832,
+      "ci95_jev_minus_tfidf_pp": [
+        -2.3619010093919357,
+        1.5507396586902307
+      ]
+    },
+    "ACC_simplex": {
+      "point_jev_minus_tfidf_pp": -0.7399067271271234,
+      "ci95_jev_minus_tfidf_pp": [
+        -2.3619010038740234,
+        1.5507396607479647
+      ]
+    },
+    "PCC": {
+      "point_jev_minus_tfidf_pp": 5.488452120873205,
+      "ci95_jev_minus_tfidf_pp": [
+        3.8812546287169267,
+        6.667786150991942
+      ]
+    },
+    "PACC_clip": {
+      "point_jev_minus_tfidf_pp": 0.29708848917542063,
+      "ci95_jev_minus_tfidf_pp": [
+        -1.5124578015630976,
+        1.836945307349412
+      ]
+    },
+    "PACC_simplex": {
+      "point_jev_minus_tfidf_pp": 0.2970884866290988,
+      "ci95_jev_minus_tfidf_pp": [
+        -1.5124578063914302,
+        1.8369453094864867
+      ]
+    },
+    "EM": {
+      "point_jev_minus_tfidf_pp": 3.763015188666145,
+      "ci95_jev_minus_tfidf_pp": [
+        0.20626418277962416,
+        5.802725784584314
+      ]
+    }
+  },
+  "bootstrap": {
+    "unit": "individual deduplicated narrative; dev and test resampled independently with replacement",
+    "repeats": 500,
+    "seed": 20261022,
+    "valid_replicates": 500,
+    "skipped_dev_missing_category": 0,
+    "skipped_fit_error": 0,
+    "em_nonconverged_replicates": {},
+    "ci": "percentile 2.5 and 97.5"
+  },
+  "truth_test_share": {
+    "bank_account": 0.1265,
+    "credit_card": 0.1465,
+    "credit_reporting": 0.214,
+    "debt_collection": 0.2835,
+    "mortgage": 0.2295
+  },
+  "truth_dev_share": {
+    "bank_account": 0.13,
+    "credit_card": 0.156,
+    "credit_reporting": 0.223,
+    "debt_collection": 0.258,
+    "mortgage": 0.233
+  },
+  "dev_test_diagnostics": {
+    "dev_class_counts": {
+      "bank_account": 130,
+      "credit_card": 156,
+      "credit_reporting": 223,
+      "debt_collection": 258,
+      "mortgage": 233
+    },
+    "test_class_counts": {
+      "bank_account": 253,
+      "credit_card": 293,
+      "credit_reporting": 428,
+      "debt_collection": 567,
+      "mortgage": 459
+    },
+    "dev_priors": {
+      "bank_account": 0.13,
+      "credit_card": 0.156,
+      "credit_reporting": 0.223,
+      "debt_collection": 0.258,
+      "mortgage": 0.233
+    },
+    "test_priors": {
+      "bank_account": 0.1265,
+      "credit_card": 0.1465,
+      "credit_reporting": 0.214,
+      "debt_collection": 0.2835,
+      "mortgage": 0.2295
+    },
+    "prior_shift_total_variation": 0.025499999999999995,
+    "smallest_dev_class_count": 130,
+    "conditional_shift": {
+      "keyword": {
+        "max_abs_entry_difference_dev_vs_test": 0.07145357486654413,
+        "note": "Diagnostic only. Uses test labels to judge whether P(prediction | category) is stable; never used for a correction."
+      },
+      "tfidf": {
+        "max_abs_entry_difference_dev_vs_test": 0.14131955001520224,
+        "note": "Diagnostic only. Uses test labels to judge whether P(prediction | category) is stable; never used for a correction."
+      },
+      "jev": {
+        "max_abs_entry_difference_dev_vs_test": 0.0734873821830343,
+        "note": "Diagnostic only. Uses test labels to judge whether P(prediction | category) is stable; never used for a correction."
+      }
+    },
+    "probability_structure": {
+      "keyword": {},
+      "tfidf": {
+        "dev": {
+          "share_top_probability_at_least_0.995": 0.0,
+          "share_entries_exactly_zero": 0.0
+        },
+        "test": {
+          "share_top_probability_at_least_0.995": 0.001,
+          "share_entries_exactly_zero": 0.0
+        }
+      },
+      "jev": {
+        "dev": {
+          "share_top_probability_at_least_0.995": 0.601,
+          "share_entries_exactly_zero": 0.6918
+        },
+        "test": {
+          "share_top_probability_at_least_0.995": 0.6065,
+          "share_entries_exactly_zero": 0.6937
+        }
+      }
+    }
+  },
+  "metrics_json_check": {
+    "checked": true,
+    "models_reproduced": [
+      "keyword",
+      "tfidf",
+      "jev"
+    ],
+    "reference": "metrics.json share_error_pp"
+  },
+  "jev_meta": {
+    "failed_attempt_records": 1,
+    "ids_with_multiple_successes": 0,
+    "successful_records_used": 3000
+  },
+  "evidence_sha256": {
+    "study.jsonl": "1f583436059e2bb087253802867eda16fe88b4145b6c1d810d1b7cb838af6dff",
+    "requests.jsonl": "ac82a2ec393aae9a87d4ce693a9aa04cacc3cd5d64139e3b24d5c67b87bd3fd1",
+    "local-predictions.jsonl": "710a14a863756be8bdb3324e4594a7be2b03e8dca6a3e46ab243ac4c4b4535d3",
+    "jev-responses.jsonl": "96136d7263922067e8c5513a08573b1259470b6e2bbaca2d63f4e38be23dacf9",
+    "metrics.json": "f1f20469cd3da2397cb42de5dba32872c100b4af8e65706282466f0d93bcdd21"
+  },
+  "analysis_source_sha256": {
+    "quantify.py": "02306b7759e03cc422077aaccf90e20628f40152fb9156a161339e663d504105"
+  },
+  "figure_geometry_check": {
+    "text_objects_checked_inside_figure": true,
+    "out_of_bounds": [],
+    "footnote_overlaps_axis_text": [],
+    "png_pixels_hw": [
+      840,
+      2000
+    ],
+    "figsize_in": [
+      10,
+      4.2
+    ],
+    "dpi": 200
+  }
+}

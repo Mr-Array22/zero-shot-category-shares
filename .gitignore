@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+
+# Secrets: never commit your API key
+.env
+
+# Large raw download (rebuild with `python -m jevstudy.prepare`)
+data/raw/
+
+# Scratch runs; published evidence lives in results/
+runs/
+*.lock
+
+# Local only
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,58 @@
+{
+  "tfidf": {
+    "threshold": 0.35000000000000003,
+    "reason": "Maximum development coverage meeting observed accepted-error target on fixed grid.",
+    "target_error": 0.1,
+    "min_accepted": 100,
+    "dev_point": {
+      "threshold": 0.35000000000000003,
+      "accepted": 966,
+      "reviewed": 34,
+      "coverage": 0.966,
+      "accepted_error": 0.09834368530020704,
+      "review_counts_by_true_class": [
+        9,
+        17,
+        4,
+        3,
+        1
+      ],
+      "accepted_predicted_counts": [
+        116,
+        129,
+        226,
+        251,
+        244
+      ],
+      "oracle_review_max_abs_share_error_pp": 1.2
+    }
+  },
+  "jev": {
+    "threshold": 0.6900000000000001,
+    "reason": "Maximum development coverage meeting observed accepted-error target on fixed grid.",
+    "target_error": 0.1,
+    "min_accepted": 100,
+    "dev_point": {
+      "threshold": 0.6900000000000001,
+      "accepted": 943,
+      "reviewed": 57,
+      "coverage": 0.943,
+      "accepted_error": 0.09968186638388123,
+      "review_counts_by_true_class": [
+        4,
+        9,
+        5,
+        30,
+        9
+      ],
+      "accepted_predicted_counts": [
+        125,
+        125,
+        265,
+        210,
+        218
+      ],
+      "oracle_review_max_abs_share_error_pp": 4.7
+    }
+  }
+}

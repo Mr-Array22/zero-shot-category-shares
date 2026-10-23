@@ -1,0 +1,40 @@
+{
+  "split": "dev",
+  "n": 1000,
+  "caveat": "Dev records informed the v2 design. This is not a confirmatory result.",
+  "v1": {
+    "accuracy": 0.875,
+    "macro_f1": 0.8742119070382822,
+    "max_abs_share_error_pp": 6.0,
+    "credit_reporting_share_error_pp": 6.0,
+    "debt_collection_to_credit_reporting": 34,
+    "share_error_pp": {
+      "bank_account": 0.1,
+      "credit_card": -2.6,
+      "credit_reporting": 6.0,
+      "debt_collection": -2.6,
+      "mortgage": -0.8999999999999999
+    }
+  },
+  "v2": {
+    "accuracy": 0.905,
+    "macro_f1": 0.9016387287698973,
+    "max_abs_share_error_pp": 0.3,
+    "credit_reporting_share_error_pp": -0.2,
+    "debt_collection_to_credit_reporting": 10,
+    "share_error_pp": {
+      "bank_account": 0.3,
+      "credit_card": 0.2,
+      "credit_reporting": -0.2,
+      "debt_collection": -0.3,
+      "mortgage": 0.0
+    }
+  },
+  "v2_minus_v1": {
+    "accuracy": 0.030000000000000027,
+    "macro_f1": 0.027426821731615036,
+    "max_abs_share_error_pp": -5.7,
+    "credit_reporting_share_error_pp": -6.2,
+    "debt_collection_to_credit_reporting": -24
+  }
+}

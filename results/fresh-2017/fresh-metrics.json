@@ -1,0 +1,356 @@
+{
+  "fresh_window": "2017q1",
+  "window": [
+    "2017-01-01",
+    "2017-04-24"
+  ],
+  "n": 2000,
+  "study_sha256": "1086bfb44e82d180bf81e2cce2c49ad1990b8c6886cbf8fe18c35655a49122cd",
+  "frozen_definitions_sha256": "add74c3548048d2a759fad4702a3ea43f8fd1f2b6c120d90f06eadfe56cfc482",
+  "train_source": "/mnt/d/jev-feedback-article/runsmy-run",
+  "tfidf_reproduction": {
+    "checked": 3000,
+    "matches": 3000
+  },
+  "arms": {
+    "keyword": {
+      "accuracy": 0.6105,
+      "macro_f1": 0.6023406295431574,
+      "max_abs_share_error_pp": 18.15,
+      "credit_reporting_share_error_pp": 0.65,
+      "n": 2000,
+      "share_error_pp": {
+        "bank_account": 18.15,
+        "credit_card": -6.550000000000001,
+        "credit_reporting": 0.65,
+        "debt_collection": -9.700000000000001,
+        "mortgage": -2.55
+      },
+      "debt_collection_to_credit_reporting": 92,
+      "credit_card_to_credit_reporting": 53,
+      "confusion_rows_true_cols_pred": [
+        [
+          175,
+          26,
+          10,
+          5,
+          10
+        ],
+        [
+          95,
+          122,
+          53,
+          24,
+          8
+        ],
+        [
+          63,
+          8,
+          328,
+          68,
+          12
+        ],
+        [
+          193,
+          15,
+          92,
+          256,
+          8
+        ],
+        [
+          63,
+          0,
+          9,
+          17,
+          340
+        ]
+      ]
+    },
+    "tfidf": {
+      "accuracy": 0.864,
+      "macro_f1": 0.8582201492146752,
+      "max_abs_share_error_pp": 2.0500000000000003,
+      "credit_reporting_share_error_pp": -0.35000000000000003,
+      "n": 2000,
+      "share_error_pp": {
+        "bank_account": -1.9,
+        "credit_card": -0.5499999999999999,
+        "credit_reporting": -0.35000000000000003,
+        "debt_collection": 2.0500000000000003,
+        "mortgage": 0.75
+      },
+      "debt_collection_to_credit_reporting": 38,
+      "credit_card_to_credit_reporting": 13,
+      "confusion_rows_true_cols_pred": [
+        [
+          174,
+          25,
+          4,
+          9,
+          14
+        ],
+        [
+          7,
+          240,
+          13,
+          35,
+          7
+        ],
+        [
+          1,
+          20,
+          406,
+          43,
+          9
+        ],
+        [
+          4,
+          6,
+          38,
+          505,
+          11
+        ],
+        [
+          2,
+          0,
+          11,
+          13,
+          403
+        ]
+      ]
+    },
+    "jev_v1": {
+      "accuracy": 0.8495,
+      "macro_f1": 0.849034475038642,
+      "max_abs_share_error_pp": 6.3,
+      "credit_reporting_share_error_pp": 6.3,
+      "n": 2000,
+      "share_error_pp": {
+        "bank_account": -0.44999999999999996,
+        "credit_card": -2.15,
+        "credit_reporting": 6.3,
+        "debt_collection": -2.85,
+        "mortgage": -0.8500000000000001
+      },
+      "debt_collection_to_credit_reporting": 105,
+      "credit_card_to_credit_reporting": 38,
+      "confusion_rows_true_cols_pred": [
+        [
+          187,
+          19,
+          5,
+          10,
+          5
+        ],
+        [
+          14,
+          225,
+          38,
+          24,
+          1
+        ],
+        [
+          7,
+          10,
+          441,
+          21,
+          0
+        ],
+        [
+          6,
+          5,
+          105,
+          444,
+          4
+        ],
+        [
+          3,
+          0,
+          16,
+          8,
+          402
+        ]
+      ]
+    },
+    "jev_v2": {
+      "accuracy": 0.8785,
+      "macro_f1": 0.873602060018348,
+      "max_abs_share_error_pp": 0.7000000000000001,
+      "credit_reporting_share_error_pp": 0.05,
+      "n": 2000,
+      "share_error_pp": {
+        "bank_account": -0.6,
+        "credit_card": 0.7000000000000001,
+        "credit_reporting": 0.05,
+        "debt_collection": 0.15,
+        "mortgage": -0.3
+      },
+      "debt_collection_to_credit_reporting": 45,
+      "credit_card_to_credit_reporting": 14,
+      "confusion_rows_true_cols_pred": [
+        [
+          187,
+          23,
+          4,
+          5,
+          7
+        ],
+        [
+          13,
+          256,
+          14,
+          18,
+          1
+        ],
+        [
+          6,
+          26,
+          407,
+          39,
+          1
+        ],
+        [
+          6,
+          10,
+          45,
+          498,
+          5
+        ],
+        [
+          2,
+          1,
+          10,
+          7,
+          409
+        ]
+      ]
+    }
+  },
+  "bootstrap_ci95": {
+    "keyword": {
+      "accuracy": [
+        0.591,
+        0.633
+      ],
+      "macro_f1": [
+        0.5833939835071743,
+        0.6235617990972064
+      ],
+      "max_abs_share_error_pp": [
+        16.25,
+        19.97625
+      ],
+      "credit_reporting_share_error_pp": [
+        -0.95,
+        2.326249999999999
+      ]
+    },
+    "tfidf": {
+      "accuracy": [
+        0.8495,
+        0.8795
+      ],
+      "macro_f1": [
+        0.8420699449401368,
+        0.8753731760111327
+      ],
+      "max_abs_share_error_pp": [
+        1.4500000000000002,
+        3.3762499999999993
+      ],
+      "credit_reporting_share_error_pp": [
+        -1.5,
+        0.8500000000000001
+      ]
+    },
+    "jev_v1": {
+      "accuracy": [
+        0.834,
+        0.8647625
+      ],
+      "macro_f1": [
+        0.8331732580298965,
+        0.8648182676693262
+      ],
+      "max_abs_share_error_pp": [
+        4.95,
+        7.6499999999999995
+      ],
+      "credit_reporting_share_error_pp": [
+        4.95,
+        7.6499999999999995
+      ]
+    },
+    "jev_v2": {
+      "accuracy": [
+        0.8665,
+        0.8925
+      ],
+      "macro_f1": [
+        0.8612098886455517,
+        0.8891717196524632
+      ],
+      "max_abs_share_error_pp": [
+        0.44999999999999996,
+        1.8262499999999986
+      ],
+      "credit_reporting_share_error_pp": [
+        -1.1262499999999998,
+        1.1762499999999987
+      ]
+    }
+  },
+  "paired_v2_minus_v1": {
+    "point": {
+      "accuracy": 0.028999999999999915,
+      "macro_f1": 0.024567584979705903,
+      "max_abs_share_error_pp": -5.6,
+      "credit_reporting_share_error_pp": -6.25
+    },
+    "ci95": {
+      "accuracy": [
+        0.018000000000000016,
+        0.04026249999999999
+      ],
+      "macro_f1": [
+        0.014629725247719775,
+        0.035684892386584524
+      ],
+      "max_abs_share_error_pp": [
+        -6.752499999999999,
+        -3.5499999999999994
+      ],
+      "credit_reporting_share_error_pp": [
+        -7.37625,
+        -5.15
+      ]
+    }
+  },
+  "primary": {
+    "max_abs_share_error_pp": {
+      "v1": 6.3,
+      "v2": 0.7000000000000001,
+      "v2_minus_v1": -5.6,
+      "ci95_diff": [
+        -6.752499999999999,
+        -3.5499999999999994
+      ]
+    },
+    "credit_reporting_signed_share_error_pp": {
+      "v1": 6.3,
+      "v2": 0.05
+    }
+  },
+  "decision_rule": "fixes_bias_claim = |v2 credit_reporting signed share error| < 3.0 pp AND v2 accuracy - v1 accuracy >= -0.01",
+  "decision": {
+    "credit_reporting_within_target": true,
+    "accuracy_change": 0.028999999999999915,
+    "accuracy_within_tolerance": true,
+    "fixes_bias_claim": true
+  },
+  "bootstrap": {
+    "repeats": 500,
+    "seed": 20261022,
+    "method": "nonparametric resample of fresh records, shared across arms"
+  }
+}

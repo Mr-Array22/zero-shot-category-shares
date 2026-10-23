@@ -1,0 +1,345 @@
+{
+  "extras": {
+    "jev_ok_responses": 3000,
+    "jev_raw_probability_sums_equal_one": 2999,
+    "jev_debt_to_reporting_misroutes": 110,
+    "of_which_tfidf_correct": 79,
+    "jev_test_share_top_prob_ge_0_99": 0.6815,
+    "jev_test_share_top_prob_eq_1": 0.6065,
+    "note": "Share at top probability ~1 bounds how low Jev's review-coverage curve can go."
+  },
+  "generated_by": "diagnostics.py (read-only analysis of completed run files; no model calls)",
+  "inputs_sha256": {
+    "data-manifest.json": "5bb5146c2125b0175f3c8cad8ad85a6f912a66290efb487254befb53b9cb597c",
+    "local-manifest.json": "cfd5bbde49229ec95db05b48989f6e022670ce301ce99fbfc445731fdfbab5b3",
+    "study.jsonl": "1f583436059e2bb087253802867eda16fe88b4145b6c1d810d1b7cb838af6dff",
+    "requests.jsonl": "ac82a2ec393aae9a87d4ce693a9aa04cacc3cd5d64139e3b24d5c67b87bd3fd1",
+    "local-predictions.jsonl": "710a14a863756be8bdb3324e4594a7be2b03e8dca6a3e46ab243ac4c4b4535d3",
+    "jev-responses.jsonl": "96136d7263922067e8c5513a08573b1259470b6e2bbaca2d63f4e38be23dacf9",
+    "review-policy.json": "89d2f34f8415346036160faa6f167eed3255cf7787b63b227602c31f85f454bd"
+  },
+  "diagnostics_py_sha256": "c85ae9b90f37c0d9854eceb3d944a2736b6e989a3f1e0f2dd95e4aa0a1f4e9a1",
+  "n": {
+    "dev": 1000,
+    "test": 2000
+  },
+  "mcnemar_jev_vs_tfidf": {
+    "test": {
+      "n": 2000,
+      "jev_accuracy": 0.8625,
+      "tfidf_accuracy": 0.8825,
+      "jev_minus_tfidf_accuracy_pp": -1.9999999999999907,
+      "jev_right_tfidf_wrong": 93,
+      "tfidf_right_jev_wrong": 133,
+      "both_right": 1632,
+      "both_wrong": 142,
+      "exact_two_sided_p": 0.009328368045545963,
+      "continuity_corrected_z": 2.594241410427183,
+      "continuity_corrected_chi2": 6.730088495575221,
+      "more_accurate_on_discordant_pairs": "tfidf"
+    },
+    "dev": {
+      "n": 1000,
+      "jev_accuracy": 0.875,
+      "tfidf_accuracy": 0.883,
+      "jev_minus_tfidf_accuracy_pp": -0.8000000000000007,
+      "jev_right_tfidf_wrong": 57,
+      "tfidf_right_jev_wrong": 65,
+      "both_right": 818,
+      "both_wrong": 60,
+      "exact_two_sided_p": 0.5264163099662322,
+      "continuity_corrected_z": 0.6337502222976297,
+      "continuity_corrected_chi2": 0.4016393442622951,
+      "more_accurate_on_discordant_pairs": "tfidf"
+    }
+  },
+  "dev_metrics": {
+    "keyword": {
+      "n": 1000,
+      "accuracy": 0.607,
+      "macro_f1": 0.5959880344609498,
+      "per_class_f1": {
+        "bank_account": 0.48590021691973967,
+        "credit_card": 0.48535564853556484,
+        "credit_reporting": 0.6605504587155964,
+        "debt_collection": 0.5238095238095238,
+        "mortgage": 0.8243243243243243
+      },
+      "share_error_pp_by_label": {
+        "bank_account": 20.1,
+        "credit_card": -7.3,
+        "credit_reporting": -1.0,
+        "debt_collection": -9.6,
+        "mortgage": -2.1999999999999997
+      },
+      "max_abs_share_error_pp": 20.1,
+      "max_abs_share_error_label": "bank_account",
+      "brier": null
+    },
+    "tfidf": {
+      "n": 1000,
+      "accuracy": 0.883,
+      "macro_f1": 0.8800646635603666,
+      "per_class_f1": {
+        "bank_account": 0.9027237354085603,
+        "credit_card": 0.821917808219178,
+        "credit_reporting": 0.8741721854304636,
+        "debt_collection": 0.874274661508704,
+        "mortgage": 0.9272349272349273
+      },
+      "share_error_pp_by_label": {
+        "bank_account": -0.3,
+        "credit_card": -2.0,
+        "credit_reporting": 0.7000000000000001,
+        "debt_collection": 0.1,
+        "mortgage": 1.5
+      },
+      "max_abs_share_error_pp": 2.0,
+      "max_abs_share_error_label": "credit_card",
+      "brier": 0.20984118568871626
+    },
+    "jev": {
+      "n": 1000,
+      "accuracy": 0.875,
+      "macro_f1": 0.8742119070382822,
+      "per_class_f1": {
+        "bank_account": 0.9118773946360154,
+        "credit_card": 0.8111888111888111,
+        "credit_reporting": 0.8458498023715415,
+        "debt_collection": 0.8612244897959184,
+        "mortgage": 0.9409190371991247
+      },
+      "share_error_pp_by_label": {
+        "bank_account": 0.1,
+        "credit_card": -2.6,
+        "credit_reporting": 6.0,
+        "debt_collection": -2.6,
+        "mortgage": -0.8999999999999999
+      },
+      "max_abs_share_error_pp": 6.0,
+      "max_abs_share_error_label": "credit_reporting",
+      "brier": 0.19425080000000003
+    }
+  },
+  "review_thresholds": {
+    "tfidf": 0.35000000000000003,
+    "jev": 0.6900000000000001
+  },
+  "test_largest_confusion_cell": {
+    "tfidf": {
+      "true": "debt_collection",
+      "predicted": "credit_reporting",
+      "count": 33,
+      "threshold": 0.35000000000000003,
+      "cleared_threshold": 33,
+      "mean_true_label_probability": 0.3019425736851762,
+      "mean_true_label_probability_cleared": 0.3019425736851762
+    },
+    "jev": {
+      "true": "debt_collection",
+      "predicted": "credit_reporting",
+      "count": 110,
+      "threshold": 0.6900000000000001,
+      "cleared_threshold": 85,
+      "mean_true_label_probability": 0.1613636363636364,
+      "mean_true_label_probability_cleared": 0.10258823529411763
+    }
+  },
+  "jev_debt_collection_misroute_terms": {
+    "misrouted_n": 110,
+    "correct_n": 440,
+    "patterns": {
+      "credit_report": {
+        "regex": "credit report",
+        "misrouted_matches": 76,
+        "misrouted_share": 0.6909090909090909,
+        "correct_matches": 108,
+        "correct_share": 0.24545454545454545
+      },
+      "bureau": {
+        "regex": "\\b(equifax|experian|transunion|trans union|credit bureau|credit reporting agenc\\w*|bureaus?)\\b",
+        "misrouted_matches": 35,
+        "misrouted_share": 0.3181818181818182,
+        "correct_matches": 50,
+        "correct_share": 0.11363636363636363
+      },
+      "collector": {
+        "regex": "\\b(collector|collection agency|collections? agency|debt collector)\\b",
+        "misrouted_matches": 18,
+        "misrouted_share": 0.16363636363636364,
+        "correct_matches": 80,
+        "correct_share": 0.18181818181818182
+      },
+      "validation": {
+        "regex": "\\b(fdcpa|validation|validate|verify the debt|debt validation)\\b",
+        "misrouted_matches": 11,
+        "misrouted_share": 0.1,
+        "correct_matches": 59,
+        "correct_share": 0.1340909090909091
+      },
+      "dispute": {
+        "regex": "\\bdisput",
+        "misrouted_matches": 28,
+        "misrouted_share": 0.2545454545454545,
+        "correct_matches": 85,
+        "correct_share": 0.19318181818181818
+      }
+    }
+  },
+  "test_reliability": {
+    "tfidf": {
+      "n": 2000,
+      "bins": [
+        {
+          "low": 0.0,
+          "high": 0.1,
+          "n": 0,
+          "mean_top_probability": null,
+          "accuracy": null
+        },
+        {
+          "low": 0.1,
+          "high": 0.2,
+          "n": 0,
+          "mean_top_probability": null,
+          "accuracy": null
+        },
+        {
+          "low": 0.2,
+          "high": 0.3,
+          "n": 24,
+          "mean_top_probability": 0.27247838649445477,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "low": 0.3,
+          "high": 0.4,
+          "n": 107,
+          "mean_top_probability": 0.3541703917425618,
+          "accuracy": 0.5233644859813084
+        },
+        {
+          "low": 0.4,
+          "high": 0.5,
+          "n": 201,
+          "mean_top_probability": 0.454473024628864,
+          "accuracy": 0.6865671641791045
+        },
+        {
+          "low": 0.5,
+          "high": 0.6,
+          "n": 233,
+          "mean_top_probability": 0.550184521314256,
+          "accuracy": 0.7982832618025751
+        },
+        {
+          "low": 0.6,
+          "high": 0.7,
+          "n": 249,
+          "mean_top_probability": 0.6506432283314935,
+          "accuracy": 0.9036144578313253
+        },
+        {
+          "low": 0.7,
+          "high": 0.8,
+          "n": 309,
+          "mean_top_probability": 0.7518668591796723,
+          "accuracy": 0.9546925566343042
+        },
+        {
+          "low": 0.8,
+          "high": 0.9,
+          "n": 421,
+          "mean_top_probability": 0.8505008173935791,
+          "accuracy": 0.9643705463182898
+        },
+        {
+          "low": 0.9,
+          "high": 1.0,
+          "n": 456,
+          "mean_top_probability": 0.9411996059057318,
+          "accuracy": 0.9890350877192983
+        }
+      ],
+      "median_top_probability": 0.7634883535712695,
+      "share_top_probability_at_least_0_9": 0.228
+    },
+    "jev": {
+      "n": 2000,
+      "bins": [
+        {
+          "low": 0.0,
+          "high": 0.1,
+          "n": 0,
+          "mean_top_probability": null,
+          "accuracy": null
+        },
+        {
+          "low": 0.1,
+          "high": 0.2,
+          "n": 0,
+          "mean_top_probability": null,
+          "accuracy": null
+        },
+        {
+          "low": 0.2,
+          "high": 0.3,
+          "n": 0,
+          "mean_top_probability": null,
+          "accuracy": null
+        },
+        {
+          "low": 0.3,
+          "high": 0.4,
+          "n": 2,
+          "mean_top_probability": 0.385,
+          "accuracy": 0.5
+        },
+        {
+          "low": 0.4,
+          "high": 0.5,
+          "n": 10,
+          "mean_top_probability": 0.449,
+          "accuracy": 0.3
+        },
+        {
+          "low": 0.5,
+          "high": 0.6,
+          "n": 53,
+          "mean_top_probability": 0.5509433962264151,
+          "accuracy": 0.5283018867924528
+        },
+        {
+          "low": 0.6,
+          "high": 0.7,
+          "n": 60,
+          "mean_top_probability": 0.6463333333333333,
+          "accuracy": 0.55
+        },
+        {
+          "low": 0.7,
+          "high": 0.8,
+          "n": 92,
+          "mean_top_probability": 0.7451086956521739,
+          "accuracy": 0.5760869565217391
+        },
+        {
+          "low": 0.8,
+          "high": 0.9,
+          "n": 108,
+          "mean_top_probability": 0.8475757575757575,
+          "accuracy": 0.6759259259259259
+        },
+        {
+          "low": 0.9,
+          "high": 1.0,
+          "n": 1675,
+          "mean_top_probability": 0.990089552238806,
+          "accuracy": 0.9158208955223881
+        }
+      ],
+      "median_top_probability": 1.0,
+      "share_top_probability_at_least_0_9": 0.8375
+    }
+  }
+}

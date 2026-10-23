@@ -1,0 +1,10 @@
+{
+  "repeat_responses": 400,
+  "originals": 200,
+  "copies": 2,
+  "label_agreement": 0.99,
+  "label_disagreements": 4,
+  "mean_abs_probability_difference": 0.003635656565656565,
+  "max_abs_probability_difference": 0.13000000000000006,
+  "model_calls": 0
+}

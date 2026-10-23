@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this code or results, please cite it as below."
+title: "Zero-shot category shares: accuracy vs. dashboard bias of a zero-shot classifier on CFPB complaints"
+authors:
+  - family-names: Gamal
+    given-names: Mostafa
+version: 1.0.0
+date-released: 2026-10-23
+license: MIT

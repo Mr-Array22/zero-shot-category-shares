@@ -1,0 +1,25 @@
+{
+  "arm": "dev-v2",
+  "created_utc": "2026-10-23T11:40:52.035539+00:00",
+  "preregistered": false,
+  "model": "jev-1.14.0",
+  "source_study_sha256": "1f583436059e2bb087253802867eda16fe88b4145b6c1d810d1b7cb838af6dff",
+  "study_sha256": "37800bbd61d223ac1053c278b50172ba34f985f71dc824a515fabc88359bce36",
+  "requests_sha256": "8293eb83502d1bb2cc16d75823646f062e5a2d3a1812f1f770390e525f71f0a0",
+  "definitions_file": "definitions/v2.json",
+  "definitions_sha256": "add74c3548048d2a759fad4702a3ea43f8fd1f2b6c120d90f06eadfe56cfc482",
+  "n": 1000,
+  "splits": {
+    "dev": {
+      "n": 1000,
+      "counts": {
+        "mortgage": 233,
+        "bank_account": 130,
+        "debt_collection": 258,
+        "credit_reporting": 223,
+        "credit_card": 156
+      }
+    }
+  },
+  "note": "Development-only requests. v2 was designed on these records; not evidence of improvement."
+}

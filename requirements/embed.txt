@@ -1,0 +1,4 @@
+# Extra dependency for the embeddings baseline (python -m jevstudy.embed_baseline).
+# sentence-transformers 6.1.0 was published to PyPI on 2026-09-18 and requires Python >=3.10.
+-r lock.txt
+sentence-transformers==6.1.0

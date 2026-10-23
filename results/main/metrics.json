@@ -1,0 +1,3025 @@
+{
+  "status": "complete",
+  "labels": [
+    "bank_account",
+    "credit_card",
+    "credit_reporting",
+    "debt_collection",
+    "mortgage"
+  ],
+  "label_names": [
+    "Bank account",
+    "Credit card",
+    "Credit reporting",
+    "Debt collection",
+    "Mortgage"
+  ],
+  "test_n": 2000,
+  "bootstrap_repeats": 500,
+  "bootstrap_unit": "individual deduplicated narrative; consumer/incident clusters are unavailable",
+  "data": {
+    "created_utc": "2026-10-22T15:16:41.955301+00:00",
+    "python": "3.12.3",
+    "source_url": "https://www.kaggle.com/datasets/selener/consumer-complaint-database",
+    "download_url": "https://www.kaggle.com/api/v1/datasets/download/selener/consumer-complaint-database?datasetVersionNumber=1",
+    "dataset_version": 1,
+    "archive_sha256": "a2ee5d14aae1dba483e70ae94a96af7f401a09fb1011028f44bc59a32138f453",
+    "archive_bytes": 184119866,
+    "csv_uncompressed_bytes": 737001477,
+    "csv_crc32": "d90f7b62",
+    "study_sha256": "1f583436059e2bb087253802867eda16fe88b4145b6c1d810d1b7cb838af6dff",
+    "requests_sha256": "ac82a2ec393aae9a87d4ce693a9aa04cacc3cd5d64139e3b24d5c67b87bd3fd1",
+    "seed": 20261022,
+    "max_chars": 4000,
+    "labels": [
+      "bank_account",
+      "credit_card",
+      "credit_reporting",
+      "debt_collection",
+      "mortgage"
+    ],
+    "filter_counts": {
+      "raw_rows": 1282355,
+      "excluded_product": 443556,
+      "excluded_date": 519077,
+      "eligible_before_dedup": 114278,
+      "missing_or_short_narrative": 205444,
+      "duplicate_model_input": 2405,
+      "conflicting_input_groups_removed": 32
+    },
+    "available_after_dedup": {
+      "train": 77242,
+      "dev": 17636,
+      "test": 16963
+    },
+    "near_duplicate_detection": false,
+    "splits": {
+      "train": {
+        "n": 12000,
+        "counts": {
+          "debt_collection": 3584,
+          "credit_reporting": 2461,
+          "mortgage": 3152,
+          "credit_card": 1635,
+          "bank_account": 1168
+        },
+        "start": "2015-03-19",
+        "end": "2016-06-30",
+        "truncated": 5
+      },
+      "dev": {
+        "n": 1000,
+        "counts": {
+          "mortgage": 233,
+          "bank_account": 130,
+          "debt_collection": 258,
+          "credit_reporting": 223,
+          "credit_card": 156
+        },
+        "start": "2016-07-01",
+        "end": "2016-09-30",
+        "truncated": 0
+      },
+      "test": {
+        "n": 2000,
+        "counts": {
+          "credit_reporting": 428,
+          "bank_account": 253,
+          "credit_card": 293,
+          "mortgage": 459,
+          "debt_collection": 567
+        },
+        "start": "2016-10-01",
+        "end": "2016-12-31",
+        "truncated": 0
+      }
+    }
+  },
+  "local_environment": {
+    "study_sha256": "1f583436059e2bb087253802867eda16fe88b4145b6c1d810d1b7cb838af6dff",
+    "predictions_sha256": "710a14a863756be8bdb3324e4594a7be2b03e8dca6a3e46ab243ac4c4b4535d3",
+    "python": "3.12.15",
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "sklearn": "1.7.2",
+    "numpy": "2.2.6",
+    "threadpool_limit": 1,
+    "fit_seconds": 3.805575611999984,
+    "vocabulary_features": 40000,
+    "iterations": [
+      65
+    ],
+    "parameters": {
+      "C": 1.0,
+      "max_iter": 1500,
+      "solver": "lbfgs",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 3,
+      "max_features": 40000,
+      "sublinear_tf": true
+    },
+    "timing_design": "Single records; model remains in memory; no batching; fit excluded. Local CPU timing is not hosted-model compute latency.",
+    "timings": {
+      "keyword": {
+        "evaluation_wall_seconds": 0.10708799500002897,
+        "requests": 3000
+      },
+      "tfidf": {
+        "evaluation_wall_seconds": 2.181776400999979,
+        "requests": 3000
+      }
+    },
+    "model_calls": 0,
+    "source_sha256": {
+      "baselines.py": "ec0db80f75ea97e664915fc2a07d8ba77726d03b96a66237dd5787bc0f03c355",
+      "figures.py": "0a569d0096a2227fd1f1710cf19dbdb4b99fb1d30316cf701d3dca812b5005ed",
+      "jev_runner.py": "f623ccd7478c6932d05ae44178924c58bf10ce96c1f7e1e199efe0a7dfef06a3",
+      "metrics.py": "8027bde2d5ae02b6893f2bdd4e2f3d7c5e4e9c425ff790a70edd31b5889abcbb",
+      "prepare.py": "bb3c466d64207f65cba8119eb9667edb3f1c59886b2d564da0ad35fdf257fa60",
+      "report.py": "4a7de18c3bc6fedd2be4aa8e284cbb4c7166da4327efbeda1161dc49018a0132",
+      "run.py": "dd3a7867546e6f51fb5d7a37511610ef847eb0050e5a64cc1ecdde86f48542c8",
+      "study.py": "010b13af16515a5b9198ce9e739d003f0f71da1421beb8317295a890a83b3434"
+    }
+  },
+  "jev": {
+    "status": "complete",
+    "successful": 3000,
+    "expected": 3000,
+    "failures": 1,
+    "inference_calls_here": 0,
+    "note": "Report generation is offline. Partial Jev results are not scored against complete baselines."
+  },
+  "usage": {
+    "status": "complete",
+    "successes": 3000,
+    "expected": 3000,
+    "calls_this_invocation": 1301,
+    "wall_seconds_this_invocation": 708.31320684,
+    "budget_usd": 1.0,
+    "pause_seconds_between_calls": 0.05,
+    "timeout_seconds": 30.0,
+    "accounted_usd": 0.10088194200000013,
+    "known_list_price_usd": 0.09812943000000013,
+    "uncertain_reserved_usd": 0.0027525120000000004,
+    "attempts": 3001,
+    "note": "Budget accounting uses current list price and a conservative context-limit reservation. It is per run, not an account-wide credit cap or provider invoice.",
+    "successful_input_tokens": 2336415,
+    "successful_output_tokens": 181389,
+    "all_invocations_wall_seconds": 1639.8018156560001,
+    "successful_requests_per_wall_second": 1.8294893757023039
+  },
+  "methods": {
+    "keyword": {
+      "n": 2000,
+      "accuracy": 0.6205,
+      "macro_f1": 0.6170518069620019,
+      "confusion": [
+        [
+          205,
+          18,
+          12,
+          9,
+          9
+        ],
+        [
+          88,
+          128,
+          54,
+          17,
+          6
+        ],
+        [
+          60,
+          6,
+          303,
+          41,
+          18
+        ],
+        [
+          211,
+          7,
+          88,
+          251,
+          10
+        ],
+        [
+          74,
+          0,
+          7,
+          24,
+          354
+        ]
+      ],
+      "per_class_f1": [
+        0.4601571268237935,
+        0.5663716814159292,
+        0.679372197309417,
+        0.5522552255225522,
+        0.8271028037383178
+      ],
+      "true_counts": [
+        253,
+        293,
+        428,
+        567,
+        459
+      ],
+      "predicted_counts": [
+        638,
+        159,
+        464,
+        342,
+        397
+      ],
+      "share_error_pp": [
+        19.25,
+        -6.7,
+        1.7999999999999998,
+        -11.25,
+        -3.1
+      ],
+      "max_abs_share_error_pp": 19.25,
+      "total_variation": 0.21050000000000002,
+      "ci95_percentile_bootstrap": {
+        "accuracy": [
+          0.5982375,
+          0.6422625
+        ],
+        "macro_f1": [
+          0.5949531811125751,
+          0.638016423494562
+        ],
+        "max_abs_share_error_pp": [
+          17.07375,
+          21.252499999999998
+        ],
+        "total_variation": [
+          0.18723749999999997,
+          0.234
+        ]
+      },
+      "latency_ms": {
+        "mean": 0.026605867002786,
+        "p50": 0.016249000054813223,
+        "p95": 0.08187579999230366,
+        "n": 2000
+      }
+    },
+    "tfidf": {
+      "n": 2000,
+      "accuracy": 0.8825,
+      "macro_f1": 0.8731183761809295,
+      "confusion": [
+        [
+          190,
+          29,
+          8,
+          10,
+          16
+        ],
+        [
+          9,
+          240,
+          19,
+          19,
+          6
+        ],
+        [
+          2,
+          4,
+          393,
+          25,
+          4
+        ],
+        [
+          3,
+          7,
+          33,
+          507,
+          17
+        ],
+        [
+          1,
+          2,
+          9,
+          12,
+          435
+        ]
+      ],
+      "per_class_f1": [
+        0.8296943231441049,
+        0.8347826086956521,
+        0.8831460674157303,
+        0.8894736842105263,
+        0.928495197438634
+      ],
+      "true_counts": [
+        253,
+        293,
+        428,
+        567,
+        459
+      ],
+      "predicted_counts": [
+        205,
+        282,
+        462,
+        573,
+        478
+      ],
+      "share_error_pp": [
+        -2.4,
+        -0.5499999999999999,
+        1.7000000000000002,
+        0.3,
+        0.95
+      ],
+      "max_abs_share_error_pp": 2.4,
+      "total_variation": 0.029500000000000002,
+      "brier": 0.22288125305544818,
+      "soft_share_error_pp": [
+        -1.9029569700358602,
+        0.0673297973888709,
+        0.8820988521546475,
+        -0.12642210755182126,
+        1.0799504280441101
+      ],
+      "ci95_percentile_bootstrap": {
+        "accuracy": [
+          0.8687375,
+          0.8957625
+        ],
+        "macro_f1": [
+          0.8573904912898486,
+          0.8881479034747651
+        ],
+        "max_abs_share_error_pp": [
+          1.6737500000000003,
+          3.3000000000000003
+        ],
+        "total_variation": [
+          0.0225,
+          0.041
+        ],
+        "brier": [
+          0.209641490003231,
+          0.23783231705754607
+        ]
+      },
+      "latency_ms": {
+        "mean": 0.7008623699992995,
+        "p50": 0.6541865000144753,
+        "p95": 0.9795099499115167,
+        "n": 2000
+      },
+      "review_policy": {
+        "threshold": 0.35000000000000003,
+        "reason": "Maximum development coverage meeting observed accepted-error target on fixed grid.",
+        "target_error": 0.1,
+        "min_accepted": 100,
+        "dev_point": {
+          "threshold": 0.35000000000000003,
+          "accepted": 966,
+          "reviewed": 34,
+          "coverage": 0.966,
+          "accepted_error": 0.09834368530020704,
+          "review_counts_by_true_class": [
+            9,
+            17,
+            4,
+            3,
+            1
+          ],
+          "accepted_predicted_counts": [
+            116,
+            129,
+            226,
+            251,
+            244
+          ],
+          "oracle_review_max_abs_share_error_pp": 1.2
+        }
+      },
+      "test_review_point": {
+        "threshold": 0.35000000000000003,
+        "accepted": 1934,
+        "reviewed": 66,
+        "coverage": 0.967,
+        "accepted_error": 0.10341261633919338,
+        "review_counts_by_true_class": [
+          26,
+          21,
+          11,
+          7,
+          1
+        ],
+        "accepted_predicted_counts": [
+          187,
+          265,
+          452,
+          560,
+          470
+        ],
+        "oracle_review_max_abs_share_error_pp": 2.0
+      },
+      "review_curve": [
+        {
+          "threshold": 0.0,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1175,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            205,
+            282,
+            462,
+            573,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.02,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1175,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            205,
+            282,
+            462,
+            573,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.04,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1175,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            205,
+            282,
+            462,
+            573,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.06,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1175,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            205,
+            282,
+            462,
+            573,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.08,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1175,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            205,
+            282,
+            462,
+            573,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.1,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1175,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            205,
+            282,
+            462,
+            573,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.12,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1175,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            205,
+            282,
+            462,
+            573,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.14,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1175,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            205,
+            282,
+            462,
+            573,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.16,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1175,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            205,
+            282,
+            462,
+            573,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.18,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1175,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            205,
+            282,
+            462,
+            573,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.2,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1175,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            205,
+            282,
+            462,
+            573,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.22,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1175,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            205,
+            282,
+            462,
+            573,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.24,
+          "accepted": 1999,
+          "reviewed": 1,
+          "coverage": 0.9995,
+          "accepted_error": 0.11705852926463231,
+          "review_counts_by_true_class": [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            205,
+            282,
+            461,
+            573,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.35
+        },
+        {
+          "threshold": 0.26,
+          "accepted": 1995,
+          "reviewed": 5,
+          "coverage": 0.9975,
+          "accepted_error": 0.11578947368421053,
+          "review_counts_by_true_class": [
+            2,
+            2,
+            0,
+            1,
+            0
+          ],
+          "accepted_predicted_counts": [
+            204,
+            281,
+            460,
+            572,
+            478
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.35
+        },
+        {
+          "threshold": 0.28,
+          "accepted": 1984,
+          "reviewed": 16,
+          "coverage": 0.992,
+          "accepted_error": 0.11189516129032258,
+          "review_counts_by_true_class": [
+            5,
+            6,
+            3,
+            2,
+            0
+          ],
+          "accepted_predicted_counts": [
+            200,
+            279,
+            459,
+            569,
+            477
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.3,
+          "accepted": 1976,
+          "reviewed": 24,
+          "coverage": 0.988,
+          "accepted_error": 0.11082995951417005,
+          "review_counts_by_true_class": [
+            8,
+            9,
+            4,
+            3,
+            0
+          ],
+          "accepted_predicted_counts": [
+            197,
+            276,
+            459,
+            568,
+            476
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.4
+        },
+        {
+          "threshold": 0.32,
+          "accepted": 1960,
+          "reviewed": 40,
+          "coverage": 0.98,
+          "accepted_error": 0.10816326530612246,
+          "review_counts_by_true_class": [
+            16,
+            14,
+            7,
+            3,
+            0
+          ],
+          "accepted_predicted_counts": [
+            192,
+            272,
+            457,
+            566,
+            473
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.25
+        },
+        {
+          "threshold": 0.34,
+          "accepted": 1943,
+          "reviewed": 57,
+          "coverage": 0.9715,
+          "accepted_error": 0.10550694801852804,
+          "review_counts_by_true_class": [
+            25,
+            18,
+            8,
+            5,
+            1
+          ],
+          "accepted_predicted_counts": [
+            187,
+            270,
+            453,
+            562,
+            471
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.0500000000000003
+        },
+        {
+          "threshold": 0.36,
+          "accepted": 1920,
+          "reviewed": 80,
+          "coverage": 0.96,
+          "accepted_error": 0.10052083333333334,
+          "review_counts_by_true_class": [
+            28,
+            24,
+            16,
+            9,
+            3
+          ],
+          "accepted_predicted_counts": [
+            186,
+            263,
+            447,
+            554,
+            470
+          ],
+          "oracle_review_max_abs_share_error_pp": 1.95
+        },
+        {
+          "threshold": 0.38,
+          "accepted": 1890,
+          "reviewed": 110,
+          "coverage": 0.945,
+          "accepted_error": 0.09417989417989418,
+          "review_counts_by_true_class": [
+            35,
+            35,
+            19,
+            12,
+            9
+          ],
+          "accepted_predicted_counts": [
+            183,
+            255,
+            441,
+            551,
+            460
+          ],
+          "oracle_review_max_abs_share_error_pp": 1.7500000000000002
+        },
+        {
+          "threshold": 0.4,
+          "accepted": 1869,
+          "reviewed": 131,
+          "coverage": 0.9345,
+          "accepted_error": 0.0898876404494382,
+          "review_counts_by_true_class": [
+            42,
+            43,
+            20,
+            15,
+            11
+          ],
+          "accepted_predicted_counts": [
+            180,
+            247,
+            439,
+            544,
+            459
+          ],
+          "oracle_review_max_abs_share_error_pp": 1.55
+        },
+        {
+          "threshold": 0.42,
+          "accepted": 1832,
+          "reviewed": 168,
+          "coverage": 0.916,
+          "accepted_error": 0.08460698689956332,
+          "review_counts_by_true_class": [
+            50,
+            55,
+            27,
+            19,
+            17
+          ],
+          "accepted_predicted_counts": [
+            172,
+            240,
+            427,
+            541,
+            452
+          ],
+          "oracle_review_max_abs_share_error_pp": 1.55
+        },
+        {
+          "threshold": 0.44,
+          "accepted": 1804,
+          "reviewed": 196,
+          "coverage": 0.902,
+          "accepted_error": 0.082039911308204,
+          "review_counts_by_true_class": [
+            52,
+            59,
+            34,
+            31,
+            20
+          ],
+          "accepted_predicted_counts": [
+            171,
+            235,
+            418,
+            532,
+            448
+          ],
+          "oracle_review_max_abs_share_error_pp": 1.5
+        },
+        {
+          "threshold": 0.46,
+          "accepted": 1761,
+          "reviewed": 239,
+          "coverage": 0.8805,
+          "accepted_error": 0.0760931289040318,
+          "review_counts_by_true_class": [
+            62,
+            68,
+            44,
+            42,
+            23
+          ],
+          "accepted_predicted_counts": [
+            164,
+            225,
+            404,
+            523,
+            445
+          ],
+          "oracle_review_max_abs_share_error_pp": 1.35
+        },
+        {
+          "threshold": 0.48,
+          "accepted": 1722,
+          "reviewed": 278,
+          "coverage": 0.861,
+          "accepted_error": 0.070267131242741,
+          "review_counts_by_true_class": [
+            74,
+            71,
+            54,
+            54,
+            25
+          ],
+          "accepted_predicted_counts": [
+            156,
+            221,
+            394,
+            509,
+            442
+          ],
+          "oracle_review_max_abs_share_error_pp": 1.15
+        },
+        {
+          "threshold": 0.5,
+          "accepted": 1668,
+          "reviewed": 332,
+          "coverage": 0.834,
+          "accepted_error": 0.06294964028776978,
+          "review_counts_by_true_class": [
+            83,
+            85,
+            67,
+            65,
+            32
+          ],
+          "accepted_predicted_counts": [
+            148,
+            207,
+            375,
+            501,
+            437
+          ],
+          "oracle_review_max_abs_share_error_pp": 1.0999999999999999
+        },
+        {
+          "threshold": 0.52,
+          "accepted": 1614,
+          "reviewed": 386,
+          "coverage": 0.807,
+          "accepted_error": 0.05885997521685254,
+          "review_counts_by_true_class": [
+            93,
+            97,
+            78,
+            80,
+            38
+          ],
+          "accepted_predicted_counts": [
+            140,
+            196,
+            363,
+            485,
+            430
+          ],
+          "oracle_review_max_abs_share_error_pp": 1.0
+        },
+        {
+          "threshold": 0.54,
+          "accepted": 1571,
+          "reviewed": 429,
+          "coverage": 0.7855,
+          "accepted_error": 0.05410566518141311,
+          "review_counts_by_true_class": [
+            99,
+            104,
+            84,
+            97,
+            45
+          ],
+          "accepted_predicted_counts": [
+            135,
+            189,
+            354,
+            473,
+            420
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.95
+        },
+        {
+          "threshold": 0.56,
+          "accepted": 1535,
+          "reviewed": 465,
+          "coverage": 0.7675,
+          "accepted_error": 0.0501628664495114,
+          "review_counts_by_true_class": [
+            106,
+            112,
+            90,
+            107,
+            50
+          ],
+          "accepted_predicted_counts": [
+            130,
+            180,
+            346,
+            464,
+            415
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.8500000000000001
+        },
+        {
+          "threshold": 0.58,
+          "accepted": 1484,
+          "reviewed": 516,
+          "coverage": 0.742,
+          "accepted_error": 0.0431266846361186,
+          "review_counts_by_true_class": [
+            115,
+            121,
+            100,
+            123,
+            57
+          ],
+          "accepted_predicted_counts": [
+            124,
+            170,
+            335,
+            448,
+            407
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.7000000000000001
+        },
+        {
+          "threshold": 0.6,
+          "accepted": 1435,
+          "reviewed": 565,
+          "coverage": 0.7175,
+          "accepted_error": 0.04041811846689895,
+          "review_counts_by_true_class": [
+            125,
+            128,
+            112,
+            134,
+            66
+          ],
+          "accepted_predicted_counts": [
+            117,
+            160,
+            325,
+            434,
+            399
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.5499999999999999
+        },
+        {
+          "threshold": 0.62,
+          "accepted": 1388,
+          "reviewed": 612,
+          "coverage": 0.694,
+          "accepted_error": 0.037463976945244955,
+          "review_counts_by_true_class": [
+            134,
+            137,
+            117,
+            147,
+            77
+          ],
+          "accepted_predicted_counts": [
+            108,
+            153,
+            317,
+            419,
+            391
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.5499999999999999
+        },
+        {
+          "threshold": 0.64,
+          "accepted": 1341,
+          "reviewed": 659,
+          "coverage": 0.6705,
+          "accepted_error": 0.035794183445190156,
+          "review_counts_by_true_class": [
+            141,
+            144,
+            130,
+            159,
+            85
+          ],
+          "accepted_predicted_counts": [
+            102,
+            146,
+            304,
+            407,
+            382
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.5
+        },
+        {
+          "threshold": 0.66,
+          "accepted": 1288,
+          "reviewed": 712,
+          "coverage": 0.644,
+          "accepted_error": 0.03260869565217391,
+          "review_counts_by_true_class": [
+            151,
+            151,
+            144,
+            175,
+            91
+          ],
+          "accepted_predicted_counts": [
+            94,
+            137,
+            291,
+            389,
+            377
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.44999999999999996
+        },
+        {
+          "threshold": 0.68,
+          "accepted": 1235,
+          "reviewed": 765,
+          "coverage": 0.6175,
+          "accepted_error": 0.03076923076923077,
+          "review_counts_by_true_class": [
+            158,
+            163,
+            155,
+            187,
+            102
+          ],
+          "accepted_predicted_counts": [
+            88,
+            126,
+            278,
+            377,
+            366
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.44999999999999996
+        },
+        {
+          "threshold": 0.7000000000000001,
+          "accepted": 1186,
+          "reviewed": 814,
+          "coverage": 0.593,
+          "accepted_error": 0.02866779089376054,
+          "review_counts_by_true_class": [
+            168,
+            172,
+            167,
+            199,
+            108
+          ],
+          "accepted_predicted_counts": [
+            80,
+            115,
+            265,
+            367,
+            359
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.4
+        },
+        {
+          "threshold": 0.72,
+          "accepted": 1131,
+          "reviewed": 869,
+          "coverage": 0.5655,
+          "accepted_error": 0.026525198938992044,
+          "review_counts_by_true_class": [
+            173,
+            184,
+            182,
+            213,
+            117
+          ],
+          "accepted_predicted_counts": [
+            76,
+            102,
+            250,
+            353,
+            350
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.4
+        },
+        {
+          "threshold": 0.74,
+          "accepted": 1075,
+          "reviewed": 925,
+          "coverage": 0.5375,
+          "accepted_error": 0.026046511627906978,
+          "review_counts_by_true_class": [
+            183,
+            191,
+            193,
+            231,
+            127
+          ],
+          "accepted_predicted_counts": [
+            67,
+            95,
+            238,
+            336,
+            339
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.35000000000000003
+        },
+        {
+          "threshold": 0.76,
+          "accepted": 1013,
+          "reviewed": 987,
+          "coverage": 0.5065,
+          "accepted_error": 0.027640671273445213,
+          "review_counts_by_true_class": [
+            195,
+            200,
+            205,
+            245,
+            142
+          ],
+          "accepted_predicted_counts": [
+            55,
+            86,
+            226,
+            322,
+            324
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.35000000000000003
+        },
+        {
+          "threshold": 0.78,
+          "accepted": 940,
+          "reviewed": 1060,
+          "coverage": 0.47,
+          "accepted_error": 0.02446808510638298,
+          "review_counts_by_true_class": [
+            204,
+            214,
+            221,
+            264,
+            157
+          ],
+          "accepted_predicted_counts": [
+            47,
+            74,
+            211,
+            299,
+            309
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.35000000000000003
+        },
+        {
+          "threshold": 0.8,
+          "accepted": 877,
+          "reviewed": 1123,
+          "coverage": 0.4385,
+          "accepted_error": 0.02280501710376283,
+          "review_counts_by_true_class": [
+            212,
+            222,
+            237,
+            282,
+            170
+          ],
+          "accepted_predicted_counts": [
+            40,
+            67,
+            193,
+            282,
+            295
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.3
+        },
+        {
+          "threshold": 0.8200000000000001,
+          "accepted": 787,
+          "reviewed": 1213,
+          "coverage": 0.3935,
+          "accepted_error": 0.017789072426937738,
+          "review_counts_by_true_class": [
+            218,
+            236,
+            251,
+            318,
+            190
+          ],
+          "accepted_predicted_counts": [
+            35,
+            55,
+            178,
+            247,
+            272
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.15
+        },
+        {
+          "threshold": 0.84,
+          "accepted": 707,
+          "reviewed": 1293,
+          "coverage": 0.3535,
+          "accepted_error": 0.01272984441301273,
+          "review_counts_by_true_class": [
+            225,
+            242,
+            271,
+            345,
+            210
+          ],
+          "accepted_predicted_counts": [
+            28,
+            48,
+            157,
+            222,
+            252
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.15
+        },
+        {
+          "threshold": 0.86,
+          "accepted": 638,
+          "reviewed": 1362,
+          "coverage": 0.319,
+          "accepted_error": 0.0109717868338558,
+          "review_counts_by_true_class": [
+            231,
+            253,
+            283,
+            366,
+            229
+          ],
+          "accepted_predicted_counts": [
+            22,
+            38,
+            145,
+            201,
+            232
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.1
+        },
+        {
+          "threshold": 0.88,
+          "accepted": 541,
+          "reviewed": 1459,
+          "coverage": 0.2705,
+          "accepted_error": 0.009242144177449169,
+          "review_counts_by_true_class": [
+            241,
+            260,
+            303,
+            388,
+            267
+          ],
+          "accepted_predicted_counts": [
+            12,
+            32,
+            124,
+            180,
+            193
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.05
+        },
+        {
+          "threshold": 0.9,
+          "accepted": 456,
+          "reviewed": 1544,
+          "coverage": 0.228,
+          "accepted_error": 0.010964912280701754,
+          "review_counts_by_true_class": [
+            244,
+            268,
+            331,
+            411,
+            290
+          ],
+          "accepted_predicted_counts": [
+            9,
+            24,
+            96,
+            157,
+            170
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.05
+        },
+        {
+          "threshold": 0.92,
+          "accepted": 351,
+          "reviewed": 1649,
+          "coverage": 0.1755,
+          "accepted_error": 0.011396011396011397,
+          "review_counts_by_true_class": [
+            248,
+            272,
+            356,
+            454,
+            319
+          ],
+          "accepted_predicted_counts": [
+            5,
+            20,
+            72,
+            113,
+            141
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.05
+        },
+        {
+          "threshold": 0.9400000000000001,
+          "accepted": 216,
+          "reviewed": 1784,
+          "coverage": 0.108,
+          "accepted_error": 0.018518518518518517,
+          "review_counts_by_true_class": [
+            251,
+            284,
+            384,
+            492,
+            373
+          ],
+          "accepted_predicted_counts": [
+            2,
+            8,
+            44,
+            75,
+            87
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.05
+        },
+        {
+          "threshold": 0.96,
+          "accepted": 118,
+          "reviewed": 1882,
+          "coverage": 0.059,
+          "accepted_error": 0.0,
+          "review_counts_by_true_class": [
+            253,
+            291,
+            403,
+            529,
+            406
+          ],
+          "accepted_predicted_counts": [
+            0,
+            2,
+            25,
+            38,
+            53
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.0
+        },
+        {
+          "threshold": 0.98,
+          "accepted": 37,
+          "reviewed": 1963,
+          "coverage": 0.0185,
+          "accepted_error": 0.0,
+          "review_counts_by_true_class": [
+            253,
+            293,
+            419,
+            556,
+            442
+          ],
+          "accepted_predicted_counts": [
+            0,
+            0,
+            9,
+            11,
+            17
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.0
+        },
+        {
+          "threshold": 1.0,
+          "accepted": 0,
+          "reviewed": 2000,
+          "coverage": 0.0,
+          "accepted_error": null,
+          "review_counts_by_true_class": [
+            253,
+            293,
+            428,
+            567,
+            459
+          ],
+          "accepted_predicted_counts": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.0
+        }
+      ],
+      "reliability": [
+        {
+          "low": 0.0,
+          "high": 0.1,
+          "n": 0,
+          "mean_top_probability": null,
+          "accuracy": null
+        },
+        {
+          "low": 0.1,
+          "high": 0.2,
+          "n": 0,
+          "mean_top_probability": null,
+          "accuracy": null
+        },
+        {
+          "low": 0.2,
+          "high": 0.3,
+          "n": 24,
+          "mean_top_probability": 0.27247838649445477,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "low": 0.3,
+          "high": 0.4,
+          "n": 107,
+          "mean_top_probability": 0.3541703917425618,
+          "accuracy": 0.5233644859813084
+        },
+        {
+          "low": 0.4,
+          "high": 0.5,
+          "n": 201,
+          "mean_top_probability": 0.454473024628864,
+          "accuracy": 0.6865671641791045
+        },
+        {
+          "low": 0.5,
+          "high": 0.6,
+          "n": 233,
+          "mean_top_probability": 0.550184521314256,
+          "accuracy": 0.7982832618025751
+        },
+        {
+          "low": 0.6,
+          "high": 0.7,
+          "n": 249,
+          "mean_top_probability": 0.6506432283314935,
+          "accuracy": 0.9036144578313253
+        },
+        {
+          "low": 0.7,
+          "high": 0.8,
+          "n": 309,
+          "mean_top_probability": 0.7518668591796723,
+          "accuracy": 0.9546925566343042
+        },
+        {
+          "low": 0.8,
+          "high": 0.9,
+          "n": 421,
+          "mean_top_probability": 0.8505008173935791,
+          "accuracy": 0.9643705463182898
+        },
+        {
+          "low": 0.9,
+          "high": 1.0,
+          "n": 456,
+          "mean_top_probability": 0.9411996059057318,
+          "accuracy": 0.9890350877192983
+        }
+      ]
+    },
+    "jev": {
+      "n": 2000,
+      "accuracy": 0.8625,
+      "macro_f1": 0.8644161222380067,
+      "confusion": [
+        [
+          213,
+          17,
+          9,
+          7,
+          7
+        ],
+        [
+          8,
+          230,
+          39,
+          16,
+          0
+        ],
+        [
+          2,
+          3,
+          411,
+          11,
+          1
+        ],
+        [
+          6,
+          1,
+          110,
+          440,
+          10
+        ],
+        [
+          3,
+          1,
+          14,
+          10,
+          431
+        ]
+      ],
+      "per_class_f1": [
+        0.8783505154639175,
+        0.8440366972477065,
+        0.8130563798219584,
+        0.8372978116079924,
+        0.9493392070484582
+      ],
+      "true_counts": [
+        253,
+        293,
+        428,
+        567,
+        459
+      ],
+      "predicted_counts": [
+        232,
+        252,
+        583,
+        484,
+        449
+      ],
+      "share_error_pp": [
+        -1.05,
+        -2.0500000000000003,
+        7.75,
+        -4.15,
+        -0.5
+      ],
+      "max_abs_share_error_pp": 7.75,
+      "total_variation": 0.0775,
+      "brier": 0.22361139084787265,
+      "soft_share_error_pp": [
+        -1.0174949494949543,
+        -1.7490000000000006,
+        7.3914090909090655,
+        -3.913419191919232,
+        -0.7114949494949563
+      ],
+      "ci95_percentile_bootstrap": {
+        "accuracy": [
+          0.8477375,
+          0.877
+        ],
+        "macro_f1": [
+          0.8489210568239016,
+          0.8795339046615241
+        ],
+        "max_abs_share_error_pp": [
+          6.47375,
+          9.0
+        ],
+        "total_variation": [
+          0.0647375,
+          0.09
+        ],
+        "brier": [
+          0.19996642650061217,
+          0.247065095
+        ]
+      },
+      "latency_ms": {
+        "mean": 376.8487390509931,
+        "p50": 368.39726750008595,
+        "p95": 451.90685164984643,
+        "n": 2000
+      },
+      "review_policy": {
+        "threshold": 0.6900000000000001,
+        "reason": "Maximum development coverage meeting observed accepted-error target on fixed grid.",
+        "target_error": 0.1,
+        "min_accepted": 100,
+        "dev_point": {
+          "threshold": 0.6900000000000001,
+          "accepted": 943,
+          "reviewed": 57,
+          "coverage": 0.943,
+          "accepted_error": 0.09968186638388123,
+          "review_counts_by_true_class": [
+            4,
+            9,
+            5,
+            30,
+            9
+          ],
+          "accepted_predicted_counts": [
+            125,
+            125,
+            265,
+            210,
+            218
+          ],
+          "oracle_review_max_abs_share_error_pp": 4.7
+        }
+      },
+      "test_review_point": {
+        "threshold": 0.6900000000000001,
+        "accepted": 1875,
+        "reviewed": 125,
+        "coverage": 0.9375,
+        "accepted_error": 0.11466666666666667,
+        "review_counts_by_true_class": [
+          12,
+          22,
+          17,
+          54,
+          20
+        ],
+        "accepted_predicted_counts": [
+          221,
+          232,
+          542,
+          448,
+          432
+        ],
+        "oracle_review_max_abs_share_error_pp": 6.550000000000001
+      },
+      "review_curve": [
+        {
+          "threshold": 0.0,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.02,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.04,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.06,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.08,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.1,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.12,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.14,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.16,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.18,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.2,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.22,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.24,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.26,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.28,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.3,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.32,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.34,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.36,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.38,
+          "accepted": 2000,
+          "reviewed": 0,
+          "coverage": 1.0,
+          "accepted_error": 0.1375,
+          "review_counts_by_true_class": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            583,
+            484,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.4,
+          "accepted": 1998,
+          "reviewed": 2,
+          "coverage": 0.999,
+          "accepted_error": 0.13713713713713713,
+          "review_counts_by_true_class": [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            582,
+            483,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.42,
+          "accepted": 1997,
+          "reviewed": 3,
+          "coverage": 0.9985,
+          "accepted_error": 0.13720580871306962,
+          "review_counts_by_true_class": [
+            0,
+            1,
+            2,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            252,
+            581,
+            483,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.75
+        },
+        {
+          "threshold": 0.44,
+          "accepted": 1996,
+          "reviewed": 4,
+          "coverage": 0.998,
+          "accepted_error": 0.13677354709418837,
+          "review_counts_by_true_class": [
+            0,
+            1,
+            3,
+            0,
+            0
+          ],
+          "accepted_predicted_counts": [
+            232,
+            251,
+            581,
+            483,
+            449
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.8
+        },
+        {
+          "threshold": 0.46,
+          "accepted": 1992,
+          "reviewed": 8,
+          "coverage": 0.996,
+          "accepted_error": 0.1360441767068273,
+          "review_counts_by_true_class": [
+            1,
+            1,
+            4,
+            1,
+            1
+          ],
+          "accepted_predicted_counts": [
+            231,
+            250,
+            581,
+            482,
+            448
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.85
+        },
+        {
+          "threshold": 0.48,
+          "accepted": 1990,
+          "reviewed": 10,
+          "coverage": 0.995,
+          "accepted_error": 0.13517587939698492,
+          "review_counts_by_true_class": [
+            1,
+            1,
+            4,
+            1,
+            3
+          ],
+          "accepted_predicted_counts": [
+            231,
+            249,
+            581,
+            481,
+            448
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.85
+        },
+        {
+          "threshold": 0.5,
+          "accepted": 1988,
+          "reviewed": 12,
+          "coverage": 0.994,
+          "accepted_error": 0.13430583501006035,
+          "review_counts_by_true_class": [
+            1,
+            1,
+            4,
+            3,
+            3
+          ],
+          "accepted_predicted_counts": [
+            229,
+            249,
+            581,
+            481,
+            448
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.85
+        },
+        {
+          "threshold": 0.52,
+          "accepted": 1981,
+          "reviewed": 19,
+          "coverage": 0.9905,
+          "accepted_error": 0.13225643614336194,
+          "review_counts_by_true_class": [
+            2,
+            2,
+            4,
+            7,
+            4
+          ],
+          "accepted_predicted_counts": [
+            229,
+            248,
+            577,
+            479,
+            448
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.6499999999999995
+        },
+        {
+          "threshold": 0.54,
+          "accepted": 1971,
+          "reviewed": 29,
+          "coverage": 0.9855,
+          "accepted_error": 0.1308980213089802,
+          "review_counts_by_true_class": [
+            4,
+            5,
+            4,
+            12,
+            4
+          ],
+          "accepted_predicted_counts": [
+            227,
+            247,
+            573,
+            476,
+            448
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.449999999999999
+        },
+        {
+          "threshold": 0.56,
+          "accepted": 1961,
+          "reviewed": 39,
+          "coverage": 0.9805,
+          "accepted_error": 0.1295257521672616,
+          "review_counts_by_true_class": [
+            4,
+            6,
+            6,
+            17,
+            6
+          ],
+          "accepted_predicted_counts": [
+            227,
+            246,
+            567,
+            474,
+            447
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.249999999999999
+        },
+        {
+          "threshold": 0.58,
+          "accepted": 1949,
+          "reviewed": 51,
+          "coverage": 0.9745,
+          "accepted_error": 0.12724474089276552,
+          "review_counts_by_true_class": [
+            5,
+            8,
+            6,
+            23,
+            9
+          ],
+          "accepted_predicted_counts": [
+            227,
+            245,
+            563,
+            470,
+            444
+          ],
+          "oracle_review_max_abs_share_error_pp": 7.049999999999999
+        },
+        {
+          "threshold": 0.6,
+          "accepted": 1935,
+          "reviewed": 65,
+          "coverage": 0.9675,
+          "accepted_error": 0.12506459948320414,
+          "review_counts_by_true_class": [
+            6,
+            12,
+            7,
+            28,
+            12
+          ],
+          "accepted_predicted_counts": [
+            227,
+            241,
+            560,
+            466,
+            441
+          ],
+          "oracle_review_max_abs_share_error_pp": 6.950000000000001
+        },
+        {
+          "threshold": 0.62,
+          "accepted": 1927,
+          "reviewed": 73,
+          "coverage": 0.9635,
+          "accepted_error": 0.12298910223144785,
+          "review_counts_by_true_class": [
+            8,
+            12,
+            7,
+            33,
+            13
+          ],
+          "accepted_predicted_counts": [
+            226,
+            241,
+            558,
+            464,
+            438
+          ],
+          "oracle_review_max_abs_share_error_pp": 6.8500000000000005
+        },
+        {
+          "threshold": 0.64,
+          "accepted": 1917,
+          "reviewed": 83,
+          "coverage": 0.9585,
+          "accepted_error": 0.12154407929055816,
+          "review_counts_by_true_class": [
+            8,
+            15,
+            7,
+            38,
+            15
+          ],
+          "accepted_predicted_counts": [
+            226,
+            239,
+            555,
+            461,
+            436
+          ],
+          "oracle_review_max_abs_share_error_pp": 6.7
+        },
+        {
+          "threshold": 0.66,
+          "accepted": 1900,
+          "reviewed": 100,
+          "coverage": 0.95,
+          "accepted_error": 0.12,
+          "review_counts_by_true_class": [
+            10,
+            17,
+            11,
+            44,
+            18
+          ],
+          "accepted_predicted_counts": [
+            224,
+            234,
+            553,
+            456,
+            433
+          ],
+          "oracle_review_max_abs_share_error_pp": 6.800000000000001
+        },
+        {
+          "threshold": 0.68,
+          "accepted": 1882,
+          "reviewed": 118,
+          "coverage": 0.941,
+          "accepted_error": 0.11583421891604676,
+          "review_counts_by_true_class": [
+            11,
+            22,
+            14,
+            51,
+            20
+          ],
+          "accepted_predicted_counts": [
+            222,
+            232,
+            546,
+            450,
+            432
+          ],
+          "oracle_review_max_abs_share_error_pp": 6.6000000000000005
+        },
+        {
+          "threshold": 0.7000000000000001,
+          "accepted": 1867,
+          "reviewed": 133,
+          "coverage": 0.9335,
+          "accepted_error": 0.11194429566148902,
+          "review_counts_by_true_class": [
+            12,
+            23,
+            17,
+            59,
+            22
+          ],
+          "accepted_predicted_counts": [
+            221,
+            232,
+            537,
+            446,
+            431
+          ],
+          "oracle_review_max_abs_share_error_pp": 6.3
+        },
+        {
+          "threshold": 0.72,
+          "accepted": 1857,
+          "reviewed": 143,
+          "coverage": 0.9285,
+          "accepted_error": 0.1098546042003231,
+          "review_counts_by_true_class": [
+            12,
+            29,
+            19,
+            61,
+            22
+          ],
+          "accepted_predicted_counts": [
+            221,
+            231,
+            533,
+            441,
+            431
+          ],
+          "oracle_review_max_abs_share_error_pp": 6.2
+        },
+        {
+          "threshold": 0.74,
+          "accepted": 1841,
+          "reviewed": 159,
+          "coverage": 0.9205,
+          "accepted_error": 0.10700706137968495,
+          "review_counts_by_true_class": [
+            13,
+            30,
+            21,
+            69,
+            26
+          ],
+          "accepted_predicted_counts": [
+            218,
+            231,
+            526,
+            437,
+            429
+          ],
+          "oracle_review_max_abs_share_error_pp": 5.949999999999999
+        },
+        {
+          "threshold": 0.76,
+          "accepted": 1818,
+          "reviewed": 182,
+          "coverage": 0.909,
+          "accepted_error": 0.10506050605060506,
+          "review_counts_by_true_class": [
+            16,
+            34,
+            25,
+            78,
+            29
+          ],
+          "accepted_predicted_counts": [
+            215,
+            227,
+            520,
+            430,
+            426
+          ],
+          "oracle_review_max_abs_share_error_pp": 5.8500000000000005
+        },
+        {
+          "threshold": 0.78,
+          "accepted": 1801,
+          "reviewed": 199,
+          "coverage": 0.9005,
+          "accepted_error": 0.10105496946141032,
+          "review_counts_by_true_class": [
+            16,
+            37,
+            27,
+            85,
+            34
+          ],
+          "accepted_predicted_counts": [
+            215,
+            226,
+            512,
+            426,
+            422
+          ],
+          "oracle_review_max_abs_share_error_pp": 5.55
+        },
+        {
+          "threshold": 0.8,
+          "accepted": 1783,
+          "reviewed": 217,
+          "coverage": 0.8915,
+          "accepted_error": 0.09871003925967471,
+          "review_counts_by_true_class": [
+            19,
+            42,
+            27,
+            93,
+            36
+          ],
+          "accepted_predicted_counts": [
+            213,
+            222,
+            507,
+            420,
+            421
+          ],
+          "oracle_review_max_abs_share_error_pp": 5.3
+        },
+        {
+          "threshold": 0.8200000000000001,
+          "accepted": 1758,
+          "reviewed": 242,
+          "coverage": 0.879,
+          "accepted_error": 0.09613196814562003,
+          "review_counts_by_true_class": [
+            22,
+            47,
+            31,
+            105,
+            37
+          ],
+          "accepted_predicted_counts": [
+            209,
+            217,
+            497,
+            415,
+            420
+          ],
+          "oracle_review_max_abs_share_error_pp": 5.0
+        },
+        {
+          "threshold": 0.84,
+          "accepted": 1745,
+          "reviewed": 255,
+          "coverage": 0.8725,
+          "accepted_error": 0.09398280802292264,
+          "review_counts_by_true_class": [
+            23,
+            49,
+            31,
+            112,
+            40
+          ],
+          "accepted_predicted_counts": [
+            209,
+            215,
+            493,
+            408,
+            420
+          ],
+          "oracle_review_max_abs_share_error_pp": 4.8
+        },
+        {
+          "threshold": 0.86,
+          "accepted": 1722,
+          "reviewed": 278,
+          "coverage": 0.861,
+          "accepted_error": 0.08943089430894309,
+          "review_counts_by_true_class": [
+            25,
+            51,
+            31,
+            125,
+            46
+          ],
+          "accepted_predicted_counts": [
+            208,
+            215,
+            485,
+            400,
+            414
+          ],
+          "oracle_review_max_abs_share_error_pp": 4.3999999999999995
+        },
+        {
+          "threshold": 0.88,
+          "accepted": 1699,
+          "reviewed": 301,
+          "coverage": 0.8495,
+          "accepted_error": 0.08769864626250735,
+          "review_counts_by_true_class": [
+            27,
+            58,
+            34,
+            132,
+            50
+          ],
+          "accepted_predicted_counts": [
+            205,
+            210,
+            481,
+            392,
+            411
+          ],
+          "oracle_review_max_abs_share_error_pp": 4.35
+        },
+        {
+          "threshold": 0.9,
+          "accepted": 1675,
+          "reviewed": 325,
+          "coverage": 0.8375,
+          "accepted_error": 0.08417910447761194,
+          "review_counts_by_true_class": [
+            31,
+            64,
+            38,
+            141,
+            51
+          ],
+          "accepted_predicted_counts": [
+            201,
+            207,
+            472,
+            384,
+            411
+          ],
+          "oracle_review_max_abs_share_error_pp": 4.1000000000000005
+        },
+        {
+          "threshold": 0.92,
+          "accepted": 1641,
+          "reviewed": 359,
+          "coverage": 0.8205,
+          "accepted_error": 0.07739183424741011,
+          "review_counts_by_true_class": [
+            35,
+            71,
+            43,
+            154,
+            56
+          ],
+          "accepted_predicted_counts": [
+            197,
+            205,
+            458,
+            374,
+            407
+          ],
+          "oracle_review_max_abs_share_error_pp": 3.65
+        },
+        {
+          "threshold": 0.9400000000000001,
+          "accepted": 1558,
+          "reviewed": 442,
+          "coverage": 0.779,
+          "accepted_error": 0.06739409499358151,
+          "review_counts_by_true_class": [
+            51,
+            86,
+            58,
+            182,
+            65
+          ],
+          "accepted_predicted_counts": [
+            182,
+            194,
+            433,
+            352,
+            397
+          ],
+          "oracle_review_max_abs_share_error_pp": 3.15
+        },
+        {
+          "threshold": 0.96,
+          "accepted": 1531,
+          "reviewed": 469,
+          "coverage": 0.7655,
+          "accepted_error": 0.06270411495754409,
+          "review_counts_by_true_class": [
+            56,
+            96,
+            61,
+            188,
+            68
+          ],
+          "accepted_predicted_counts": [
+            178,
+            189,
+            423,
+            348,
+            393
+          ],
+          "oracle_review_max_abs_share_error_pp": 2.8000000000000003
+        },
+        {
+          "threshold": 0.98,
+          "accepted": 1439,
+          "reviewed": 561,
+          "coverage": 0.7195,
+          "accepted_error": 0.04586518415566365,
+          "review_counts_by_true_class": [
+            64,
+            114,
+            75,
+            227,
+            81
+          ],
+          "accepted_predicted_counts": [
+            172,
+            175,
+            390,
+            322,
+            380
+          ],
+          "oracle_review_max_abs_share_error_pp": 1.8499999999999999
+        },
+        {
+          "threshold": 1.0,
+          "accepted": 1213,
+          "reviewed": 787,
+          "coverage": 0.6065,
+          "accepted_error": 0.028029678483099753,
+          "review_counts_by_true_class": [
+            92,
+            152,
+            130,
+            302,
+            111
+          ],
+          "accepted_predicted_counts": [
+            154,
+            140,
+            314,
+            258,
+            347
+          ],
+          "oracle_review_max_abs_share_error_pp": 0.8
+        }
+      ],
+      "reliability": [
+        {
+          "low": 0.0,
+          "high": 0.1,
+          "n": 0,
+          "mean_top_probability": null,
+          "accuracy": null
+        },
+        {
+          "low": 0.1,
+          "high": 0.2,
+          "n": 0,
+          "mean_top_probability": null,
+          "accuracy": null
+        },
+        {
+          "low": 0.2,
+          "high": 0.3,
+          "n": 0,
+          "mean_top_probability": null,
+          "accuracy": null
+        },
+        {
+          "low": 0.3,
+          "high": 0.4,
+          "n": 2,
+          "mean_top_probability": 0.385,
+          "accuracy": 0.5
+        },
+        {
+          "low": 0.4,
+          "high": 0.5,
+          "n": 10,
+          "mean_top_probability": 0.449,
+          "accuracy": 0.3
+        },
+        {
+          "low": 0.5,
+          "high": 0.6,
+          "n": 53,
+          "mean_top_probability": 0.5509433962264151,
+          "accuracy": 0.5283018867924528
+        },
+        {
+          "low": 0.6,
+          "high": 0.7,
+          "n": 60,
+          "mean_top_probability": 0.6463333333333333,
+          "accuracy": 0.55
+        },
+        {
+          "low": 0.7,
+          "high": 0.8,
+          "n": 92,
+          "mean_top_probability": 0.7451086956521739,
+          "accuracy": 0.5760869565217391
+        },
+        {
+          "low": 0.8,
+          "high": 0.9,
+          "n": 108,
+          "mean_top_probability": 0.8475757575757575,
+          "accuracy": 0.6759259259259259
+        },
+        {
+          "low": 0.9,
+          "high": 1.0,
+          "n": 1675,
+          "mean_top_probability": 0.990089552238806,
+          "accuracy": 0.9158208955223881
+        }
+      ]
+    }
+  },
+  "paired": {
+    "keyword_minus_tfidf": {
+      "macro_f1_ci95": [
+        -0.27941061839688486,
+        -0.2341684769449843
+      ],
+      "max_abs_share_error_pp_ci95": [
+        14.45,
+        19.25
+      ]
+    },
+    "jev_minus_tfidf": {
+      "macro_f1_ci95": [
+        -0.02320328361907937,
+        0.0065677051262989635
+      ],
+      "max_abs_share_error_pp_ci95": [
+        3.7737500000000006,
+        6.550000000000001
+      ]
+    }
+  },
+  "evidence_sha256": {
+    "study.jsonl": "1f583436059e2bb087253802867eda16fe88b4145b6c1d810d1b7cb838af6dff",
+    "requests.jsonl": "ac82a2ec393aae9a87d4ce693a9aa04cacc3cd5d64139e3b24d5c67b87bd3fd1",
+    "local-predictions.jsonl": "710a14a863756be8bdb3324e4594a7be2b03e8dca6a3e46ab243ac4c4b4535d3",
+    "jev-responses.jsonl": "96136d7263922067e8c5513a08573b1259470b6e2bbaca2d63f4e38be23dacf9",
+    "jev-attempts.jsonl": "06fa61aad6303e569759f54e4055833eb4a79a08c9b2c5dc2ef722e36e4ffae7"
+  },
+  "analysis_source_sha256": {
+    "__init__.py": "e8872f362917a4ecd14928c1d8ee31d0bac2d8769aa6efb0a99021cffb32ad1a",
+    "baselines.py": "b4070925cc0f6893c601f93e27628a9720456b5c713345136c3edd9b6397c18c",
+    "diagnostics.py": "e27846dd09b3caee4e18a46b455b123fbe19fd4ac2ea8a511854959bce6c703f",
+    "embed_baseline.py": "cd52928b6470af295b4e646c65a12a181eb90ba743f5371d7ad9c405312a4d8a",
+    "figures.py": "cf959991f91c7d218db3dd14176dba5f3eb97121c530d173d6f5f4667ddd189d",
+    "fresh_extras.py": "01f71042c6af8f831294bef94431becdc1fbf289105c80c8f8aef0937a09c32a",
+    "jev_runner.py": "4f6d39b00660dda48a40d61b82c52fe52d69a461c574f41643065fe50a333599",
+    "metrics.py": "bee3c7db8cf00c5fc6f251916c5ba9f90712f0a52045bf6650a419b89c5044b5",
+    "paths.py": "6a4e4a2cad2e06aef0e6882c55b824e54b6dbf53ab8650ebacc69190a56daa31",
+    "prepare.py": "96f1cb35a021048e7675ea06209e9bc84421685960ed5eff845acf40c1d11f3a",
+    "quantify.py": "b54844f5f31c2eb2de3373a30674e8817048b8f37c94738b0f4631fdb213abf6",
+    "report.py": "036e1694368769267c203d8284add91c3bf5d3131d149d62e3c62283ab41b18b",
+    "revision.py": "f333177039eca9e5821d1bc8aa1c2a39014f89f49f4d89401f1574165f15dbbd",
+    "run.py": "6f974597ce87eec7703cd93f587378032da000a2eadb101ee98c50432a827be2",
+    "study.py": "df2f49fc6955865b3a362508a881d008371ec9ca2eba2185caa63a5df5074530"
+  }
+}

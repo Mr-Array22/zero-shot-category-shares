@@ -1,0 +1,13 @@
+{
+  "arm": "v2",
+  "preregistered": true,
+  "created_utc": "2026-10-23T11:58:17.921033+00:00",
+  "model": "jev-1.14.0",
+  "n": 2000,
+  "study_sha256": "1086bfb44e82d180bf81e2cce2c49ad1990b8c6886cbf8fe18c35655a49122cd",
+  "requests_sha256": "8eb823aa0075f72d123b70a9e9d08b6916daf097c020322fe7c15e6f81554b7a",
+  "definitions_file": "definitions/v2.json",
+  "definitions_sha256": "add74c3548048d2a759fad4702a3ea43f8fd1f2b6c120d90f06eadfe56cfc482",
+  "parent_manifest_sha256": "28f2b0d6fc7f2574ce60a574105d7ca4be95f2ec627194a077f6c03388219788",
+  "estimated_list_price_usd": 0.06552000000000001
+}
